@@ -4,7 +4,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/2.1.2/gpx.min.js" defer></script>
     <style>
-      #map { height: 500px; }
     </style>
   </head>
   <body>
@@ -17,7 +16,7 @@
       }).addTo(map);
 
       // URL to your GPX file or the GPX itself as a XML string.
-      const url = 'https://mpetazzoni.github.io/leaflet-gpx/demo.gpx';
+      const url = 'gpxFiles/aion_track_2025.gpx';
       const options = {
         async: true,
         polyline_options: { color: 'red' },
