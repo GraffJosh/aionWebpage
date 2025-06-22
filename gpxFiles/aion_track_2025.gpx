@@ -2,31 +2,6 @@
 <gpx version="1.1" creator="PyGPX">
   <trk>
     <trkseg>
-      <trkpt lat="39.279536666666665" lon="-76.584715">
-        <time>2025-06-20T18:09:18.873</time>
-      </trkpt>
-    </trkseg>
-  </trk>
-  <trk>
-    <trkseg>
-      <trkpt lat="39.18559333333334" lon="-76.47997333333333">
-        <time>2025-06-21T15:39:47.675</time>
-      </trkpt>
-      <trkpt lat="39.18564833333333" lon="-76.479835">
-        <time>2025-06-21T15:39:52.596</time>
-      </trkpt>
-    </trkseg>
-    <trkseg>
-      <trkpt lat="39.126105083333336" lon="-76.45786841666667">
-        <time>2025-06-21T21:35:55.514</time>
-      </trkpt>
-    </trkseg>
-    <trkseg>
-      <trkpt lat="39.126133466666666" lon="-76.45781823333333">
-        <time>2025-06-21T21:40:40.066</time>
-      </trkpt>
-    </trkseg>
-    <trkseg>
       <trkpt lat="39.12613306666667" lon="-76.45782133333333">
         <time>2025-06-21T21:44:20.636</time>
       </trkpt>
@@ -3516,27 +3491,6 @@
       </trkpt>
       <trkpt lat="39.16306" lon="-76.44015166666667">
         <time>2025-06-22T11:01:51.500</time>
-      </trkpt>
-    </trkseg>
-    <trkseg>
-      <trkpt lat="39.27955538333333" lon="-76.58470476666666">
-        <time>2025-06-22T16:31:28.479</time>
-      </trkpt>
-      <trkpt lat="39.27954965" lon="-76.58469885">
-        <time>2025-06-22T16:33:10.339</time>
-      </trkpt>
-      <trkpt lat="39.27955115" lon="-76.58469713333334">
-        <time>2025-06-22T16:33:11.396</time>
-      </trkpt>
-    </trkseg>
-    <trkseg>
-      <trkpt lat="39.2795811" lon="-76.5846781">
-        <time>2025-06-22T17:09:52.911</time>
-      </trkpt>
-    </trkseg>
-    <trkseg>
-      <trkpt lat="39.2795941" lon="-76.58467863333334">
-        <time>2025-06-22T17:11:37.379</time>
       </trkpt>
     </trkseg>
   </trk>
