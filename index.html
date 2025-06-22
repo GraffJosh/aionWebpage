@@ -1,17 +1,31 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>My Leaflet Map</title>
-  <meta charset="utf-8" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <style>
-    #map { height: 100vh; }
-  </style>
-</head>
-<body>
-  <div id="map"></div>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/2.1.2/gpx.min.js" defer></script>
+    <style>
+      #map { height: 500px; }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <!-- ... -->
+    <script type="module">
+      const map = L.map('map');
+      L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
+      }).addTo(map);
 
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="script.js"></script>
-</body>
+      // URL to your GPX file or the GPX itself as a XML string.
+      const url = 'https://mpetazzoni.github.io/leaflet-gpx/demo.gpx';
+      const options = {
+        async: true,
+        polyline_options: { color: 'red' },
+      };
+
+      const gpx = new L.GPX(url, options).on('loaded', (e) => {
+        map.fitBounds(e.target.getBounds());
+      }).addTo(map);
+     </script>
+  </body>
 </html>
