@@ -74,6 +74,24 @@
     .track-item input[type="checkbox"] {
         margin: 0;
     }
+    .track-folder {
+        margin-bottom: 10px;
+    }
+
+    .folder-toggle {
+        background: #f0f0f0;
+        border: none;
+        padding: 5px 8px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+        border-radius: 5px;
+    }
+
+    .folder-files {
+        padding-left: 10px;
+    }
 
     @media (min-width: 125px) {
       #trackList {
@@ -127,17 +145,97 @@
             attribution: 'Map data © openseamap contributors'
         }).addTo(map);
 
-        // === 5. Get GPX file list from GitHub API ===
-        async function fetchGpxFiles() {
+        async function fetchGroupedGpxFiles() {
             const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/git/trees/${GITHUB_BRANCH}?recursive=1`;
             const response = await fetch(url);
             const data = await response.json();
-            if (!data.tree) return [];
+            if (!data.tree) return {};
 
-            return data.tree
-                .filter(item => item.path.startsWith(GPX_DIRECTORY + '/') && item.path.endsWith('.gpx'))
-                .map(item => item.path);
+            // Group by subdirectory inside gpxFiles/
+            const groups = {};
+
+            data.tree.forEach(item => {
+                if (
+                    item.path.startsWith(GPX_DIRECTORY + '/') &&
+                    item.path.endsWith('.gpx')
+                ) {
+                    const relativePath = item.path.slice(GPX_DIRECTORY.length + 1); // strip gpxFiles/
+                    const parts = relativePath.split('/');
+                    const folder = parts.length > 1 ? parts[0] : '_root';
+                    if (!groups[folder]) groups[folder] = [];
+                    groups[folder].push(item.path); // full path with gpxFiles/
+                }
+            });
+
+            return groups;  // { folder1: [...], folder2: [...], _root: [...] }
         }
+
+        function createGroupedUI(fileGroups) {
+            trackCheckboxesDiv.innerHTML = ''; // Clear existing content
+
+            Object.entries(fileGroups).forEach(([folderName, files]) => {
+                const section = document.createElement('div');
+                section.classList.add('track-folder');
+
+                const toggle = document.createElement('button');
+                toggle.classList.add('folder-toggle');
+                toggle.textContent = `▸ ${folderName}`;
+                toggle.dataset.open = 'false';
+
+                const fileContainer = document.createElement('div');
+                fileContainer.classList.add('folder-files');
+                fileContainer.style.display = 'none';
+
+                toggle.addEventListener('click', () => {
+                    const open = toggle.dataset.open === 'true';
+                    toggle.dataset.open = (!open).toString();
+                    toggle.textContent = `${open ? '▸' : '▾'} ${folderName}`;
+                    fileContainer.style.display = open ? 'none' : 'block';
+
+                    // Optional: select all when opened
+                    if (!open) {
+                        const checkboxes = fileContainer.querySelectorAll('input[type="checkbox"]');
+                        checkboxes.forEach(cb => {
+                            if (!cb.checked) {
+                                cb.checked = true;
+                                cb.dispatchEvent(new Event('change'));
+                            }
+                        });
+                    }
+                });
+
+                files.forEach(file => {
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.value = file;
+                    checkbox.id = `track-${file.replace(/[^\w-]/g, '_')}`;
+
+                    const label = document.createElement('label');
+                    label.setAttribute('for', checkbox.id);
+                    label.textContent = file.split('/').pop();
+
+                    const wrapper = document.createElement('div');
+                    wrapper.classList.add('track-item');
+                    wrapper.appendChild(checkbox);
+                    wrapper.appendChild(label);
+                    fileContainer.appendChild(wrapper);
+
+                    checkbox.addEventListener('change', (e) => {
+                        const isChecked = e.target.checked;
+                        isChecked ? addTrackToMap(file) : removeTrackFromMap(file);
+                        if (window.innerWidth < 600) {
+                            trackListDiv.classList.add('hidden');
+                        }
+                    });
+                });
+
+                section.appendChild(toggle);
+                section.appendChild(fileContainer);
+                trackCheckboxesDiv.appendChild(section);
+            });
+        }
+
+
         function createCheckbox(filename, autoLoad = false) {
             const id = `track-${filename.replace(/[^\w-]/g, '_')}`;
 
@@ -154,7 +252,7 @@
             wrapper.classList.add('track-item');
             wrapper.appendChild(checkbox);
             wrapper.appendChild(label);
-            trackListDiv.appendChild(wrapper);
+            trackCheckboxesDiv.appendChild(wrapper);
 
             checkbox.addEventListener('change', (e) => {
                 const isChecked = e.target.checked;
@@ -245,27 +343,26 @@
             });
         }
 
-        
-        // === 9. Load file list + show most recent on load ===
-        fetchGpxFiles().then(files => {
-            trackCheckboxesDiv.innerHTML = ''; // clear loading message
-
-            if (files.length === 0) {
+        fetchGroupedGpxFiles().then(fileGroups => {
+            if (Object.keys(fileGroups).length === 0) {
                 trackCheckboxesDiv.innerHTML = '<i>No GPX files found.</i>';
                 return;
             }
 
-            // Sort by filename descending (assuming date encoded)
-            files.sort().reverse();
+            createGroupedUI(fileGroups);
 
-            // Auto-load most recent
-            createCheckbox(files[0], true);
-
-            // Add rest
-            for (let i = 1; i < files.length; i++) {
-                createCheckbox(files[i]);
+            // Auto-select most recent file in all folders
+            const allFiles = Object.values(fileGroups).flat();
+            if (allFiles.length) {
+                const first = allFiles.sort().reverse()[0];
+                const checkbox = document.querySelector(`input[value="${first}"]`);
+                if (checkbox) {
+                    checkbox.checked = true;
+                    checkbox.dispatchEvent(new Event('change'));
+                }
             }
         });
+
 
         document.getElementById('selectAll').addEventListener('click', () => {
             const checkboxes = trackListDiv.querySelectorAll('input[type="checkbox"]');
