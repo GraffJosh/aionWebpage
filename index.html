@@ -96,7 +96,7 @@
         trackSelector.innerHTML = ''; // clear "Loading..."
         files.forEach(file => {
           const opt = document.createElement('option');
-          opt.value = `https://${GITHUB_USER}.github.io/${GITHUB_REPO}/${file}`;
+          opt.value = file;
           opt.textContent = file.split('/').pop();
           trackSelector.appendChild(opt);
         });
