@@ -1,68 +1,116 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <link rel="icon" type="image/x-icon" href="jpg.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/2.1.2/gpx.min.js" defer></script>
-    <style>
-        #map { height: 100vh; }
-    </style>
-  </head>
-  <body>
-    <div id="map"></div>
-    <!-- ... -->
-    <script type="module">
-        const trackSelector = document.getElementById('trackSelector');
-        let currentGPX;
+<head>
+  <meta charset="utf-8" />
+  <title>Leaflet GPX Viewer</title>
+  <link rel="icon" type="image/x-icon" href="jpg.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/2.1.2/gpx.min.js"></script>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    #map { height: 100%; }
+    #trackSelector {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+      background: white;
+      padding: 4px;
+    }
+  </style>
+</head>
+<body>
+  <select id="trackSelector"><option selected disabled>Loading...</option></select>
+  <div id="map"></div>
 
-        function loadTrack(url) {
-        if (currentGPX) map.removeLayer(currentGPX);
+  <script>
+    const map = L.map('map').setView([39.9526, -75.1652], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
-        currentGPX = new L.GPX(url, {
-            async: true,
-            marker_options: { startIconUrl: null, endIconUrl: null },
-        }).on('loaded', (e) => {
-            map.fitBounds(e.target.getBounds());
-            colorTrackByDate(currentGPX);
-        }).addTo(map);
-        }
+    const trackSelector = document.getElementById('trackSelector');
+    let currentGPX;
 
-        list_directory('graffjosh', 'aionWebpage', 'gpxFiles')
-        .then(files => {
-            if (files.length === 0) {
-            trackSelector.innerHTML = '<option disabled selected>No GPX files found</option>';
-            return;
-            }
+    async function list_directory(user, repo, directory, branch = 'master') {
+      const url = `https://api.github.com/repos/${user}/${repo}/git/trees/${branch}?recursive=1`;
+      const res = await fetch(url);
+      const data = await res.json();
+      if (!data.tree) return [];
+      return data.tree
+        .filter(node => node.path.startsWith(directory + '/') && node.path.endsWith('.gpx'))
+        .map(node => node.path);
+    }
 
-            files.forEach(file => {
-            const opt = document.createElement('option');
-            opt.value = file;
-            opt.textContent = file.split('/').pop();
-            trackSelector.appendChild(opt);
-            });
+    function loadTrack(url) {
+      if (currentGPX) {
+        map.removeLayer(currentGPX);
+      }
 
-            loadTrack(files[0]);
+      currentGPX = new L.GPX(url, {
+        async: true,
+        marker_options: { startIconUrl: null, endIconUrl: null }
+      }).on('loaded', e => {
+        map.fitBounds(e.target.getBounds());
+        colorTrackByDate(currentGPX);
+      }).addTo(map);
+    }
+
+    function colorTrackByDate(gpxLayer) {
+      const segments = gpxLayer.getLayers();
+      const colorMap = {};
+      const colorList = ['red', 'blue', 'green', 'orange', 'purple', 'teal', 'brown', 'pink', 'gray'];
+      let colorIndex = 0;
+
+      segments.forEach(segment => {
+        const times = segment.feature.geometry.coordinates.map(c => c[3]);
+        const dates = times.map(t => new Date(t).toISOString().split('T')[0]);
+        const uniqueDates = [...new Set(dates)];
+
+        uniqueDates.forEach(date => {
+          if (!colorMap[date]) {
+            colorMap[date] = colorList[colorIndex % colorList.length];
+            colorIndex++;
+          }
         });
 
-        trackSelector.addEventListener('change', (e) => {
-        loadTrack(e.target.value);
-        });
-        
-        async function list_directory(user, repo, directory) {
-            const url = `https://api.github.com/repos/${user}/${repo}/git/trees/master`;
-            const list = await fetch(url).then(res => res.json());
-            const dir = list.tree.find(node => node.path === directory);
-            if (dir) {
-                const sublist = await fetch(dir.url).then(res => res.json());
-                return sublist.tree
-                .filter(node => node.path.endsWith('.gpx'))
-                .map(node => `${directory}/${node.path}`);
-            } else {
-                console.error(`Directory '${directory}' not found in repo.`);
-                return [];
-            }
+        const date = dates[0];
+        const color = colorMap[date] || 'black';
+        segment.setStyle({ color, weight: 4 });
+      });
+    }
+
+    const GITHUB_USER = 'graffjosh';
+    const GITHUB_REPO = 'aionWebpage'; // your GitHub repo name
+    const GPX_DIR = 'gpxFiles'; // directory in the repo
+    const GITHUB_BRANCH = 'main'; // or 'master'
+
+    list_directory(GITHUB_USER, GITHUB_REPO, GPX_DIR, GITHUB_BRANCH)
+      .then(files => {
+        if (files.length === 0) {
+          trackSelector.innerHTML = '<option disabled>No GPX files found</option>';
+          return;
         }
 
-     </script>
-  </body>
+        trackSelector.innerHTML = ''; // clear "Loading..."
+        files.forEach(file => {
+          const opt = document.createElement('option');
+          opt.value = `https://${GITHUB_USER}.github.io/${GITHUB_REPO}/${file}`;
+          opt.textContent = file.split('/').pop();
+          trackSelector.appendChild(opt);
+        });
+
+        // Load the first GPX file
+        loadTrack(trackSelector.options[0].value);
+      })
+      .catch(err => {
+        console.error('Failed to list GPX files:', err);
+      });
+
+    trackSelector.addEventListener('change', e => {
+      loadTrack(e.target.value);
+    });
+  </script>
+</body>
 </html>
