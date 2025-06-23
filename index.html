@@ -101,7 +101,8 @@
     <script>
 
         // === 2. Globals ===
-        const trackCheckboxesDiv = document.getElementById('trackList');
+        const trackListDiv = document.getElementById('trackList');
+        const trackCheckboxesDiv = document.getElementById('trackCheckboxes');
         const loadedTracks = {};
         const globalColorMap = {};
         const globalColorPalette = ['red', 'blue', 'green', 'orange', 'purple', 'teal', 'brown', 'pink', 'gray'];
@@ -153,7 +154,7 @@
             wrapper.classList.add('track-item');
             wrapper.appendChild(checkbox);
             wrapper.appendChild(label);
-            trackCheckboxesDiv.appendChild(wrapper);
+            trackListDiv.appendChild(wrapper);
 
             checkbox.addEventListener('change', (e) => {
                 const isChecked = e.target.checked;
@@ -161,7 +162,7 @@
 
                 // Collapse on mobile
                 if (window.innerWidth < 600) {
-                    trackCheckboxesDiv.classList.add('hidden');
+                    trackListDiv.classList.add('hidden');
                 }
             });
 
@@ -267,17 +268,17 @@
         });
 
         document.getElementById('selectAll').addEventListener('click', () => {
-            const checkboxes = trackCheckboxesDiv.querySelectorAll('input[type="checkbox"]');
+            const checkboxes = trackListDiv.querySelectorAll('input[type="checkbox"]');
             checkboxes.forEach(cb => {
                 if (!cb.checked) {
-                cb.checked = true;
-                cb.dispatchEvent(new Event('change'));
+                    cb.checked = true;
+                    cb.dispatchEvent(new Event('change'));
                 }
             });
         });
 
         document.getElementById('clearAll').addEventListener('click', () => {
-            const checkboxes = trackCheckboxesDiv.querySelectorAll('input[type="checkbox"]');
+            const checkboxes = trackListDiv.querySelectorAll('input[type="checkbox"]');
             checkboxes.forEach(cb => {
                 if (cb.checked) {
                 cb.checked = false;
@@ -288,7 +289,7 @@
 
 
         document.getElementById('toggleTrackList').addEventListener('click', () => {
-            trackCheckboxesDiv.classList.toggle('hidden');
+            trackListDiv.classList.toggle('hidden');
         });
     </script>
 
