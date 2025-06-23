@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Leaflet GPX Viewer</title>
+  <title>Aion's Track</title>
   <link rel="icon" type="image/x-icon" href="jpg.ico" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
@@ -18,99 +18,167 @@
       background: white;
       padding: 4px;
     }
+    #trackList {
+        position: absolute;
+        top: 100px;
+        left: 10px;
+        background: rgba(255,255,255,0.9);
+        z-index: 1000;
+        padding: 10px;
+        max-height: 90vh;
+        overflow-y: auto;
+        font-family: sans-serif;
+        font-size: 14px;
+    }
+
   </style>
 </head>
 <body>
-  <select id="trackSelector"><option selected disabled>Loading...</option></select>
+  <!-- <select id="trackSelector"><option selected disabled>Loading...</option></select> -->
+  <div id="trackList"></div>
   <div id="map"></div>
+    <script>
+        // 1. Set up the Leaflet map
+        const map = L.map('map').setView([39.9526, -75.1652], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data © OpenStreetMap contributors'
+        }).addTo(map);
 
-  <script>
-    const map = L.map('map').setView([39.9526, -75.1652], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
-    }).addTo(map);
+        // 2. DOM element where checkboxes will go
+        const trackListDiv = document.getElementById('trackList');
 
-    const trackSelector = document.getElementById('trackSelector');
-    let currentGPX;
+        // 3. Store loaded GPX layers so we can remove them later
+        const loadedTracks = {};  // filename → GPX layer
 
-    async function list_directory(user, repo, directory, branch = 'master') {
-      const url = `https://api.github.com/repos/${user}/${repo}/git/trees/${branch}?recursive=1`;
-      const res = await fetch(url);
-      const data = await res.json();
-      if (!data.tree) return [];
-      return data.tree
-        .filter(node => node.path.startsWith(directory + '/') && node.path.endsWith('.gpx'))
-        .map(node => node.path);
-    }
+        // 4. GitHub repo info — change these for your repo!
+        const GITHUB_USER = 'graffjosh';
+        const GITHUB_REPO = 'aionWebpage'; // your GitHub repo name
+        const GITHUB_BRANCH = 'main';         // or 'master'
+        const GPX_DIRECTORY = 'gpxFiles';     // folder containing your .gpx files
 
-    function loadTrack(url) {
-      if (currentGPX) {
-        map.removeLayer(currentGPX);
-      }
+        // 5. Load list of GPX files from GitHub
+        async function fetchGpxFilesFromGithub() {
+            const apiURL = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/git/trees/${GITHUB_BRANCH}?recursive=1`;
 
-      currentGPX = new L.GPX(url, {
-        async: true,
-        marker_options: { startIconUrl: null, endIconUrl: null }
-      }).on('loaded', e => {
-        map.fitBounds(e.target.getBounds());
-        colorTrackByDate(currentGPX);
-      }).addTo(map);
-    }
+            try {
+            const response = await fetch(apiURL);
+            const data = await response.json();
+            if (!data.tree) throw new Error('No tree found in GitHub API response');
 
-    function colorTrackByDate(gpxLayer) {
-      const segments = gpxLayer.getLayers();
-      const colorMap = {};
-      const colorList = ['red', 'blue', 'green', 'orange', 'purple', 'teal', 'brown', 'pink', 'gray'];
-      let colorIndex = 0;
+            // Filter for GPX files inside the specified directory
+            const gpxFiles = data.tree
+                .filter(item =>
+                item.path.startsWith(GPX_DIRECTORY + '/') &&
+                item.path.endsWith('.gpx')
+                )
+                .map(item => item.path);
 
-      segments.forEach(segment => {
-        const times = segment.feature.geometry.coordinates.map(c => c[3]);
-        const dates = times.map(t => new Date(t).toISOString().split('T')[0]);
-        const uniqueDates = [...new Set(dates)];
+            return gpxFiles;
 
-        uniqueDates.forEach(date => {
-          if (!colorMap[date]) {
-            colorMap[date] = colorList[colorIndex % colorList.length];
-            colorIndex++;
-          }
-        });
-
-        const date = dates[0];
-        const color = colorMap[date] || 'black';
-        segment.setStyle({ color, weight: 4 });
-      });
-    }
-
-    const GITHUB_USER = 'graffjosh';
-    const GITHUB_REPO = 'aionWebpage'; // your GitHub repo name
-    const GPX_DIR = 'gpxFiles'; // directory in the repo
-    const GITHUB_BRANCH = 'main'; // or 'master'
-
-    list_directory(GITHUB_USER, GITHUB_REPO, GPX_DIR, GITHUB_BRANCH)
-      .then(files => {
-        if (files.length === 0) {
-          trackSelector.innerHTML = '<option disabled>No GPX files found</option>';
-          return;
+            } catch (error) {
+            console.error('Error fetching GPX file list:', error);
+            return [];
+            }
         }
 
-        trackSelector.innerHTML = ''; // clear "Loading..."
-        files.forEach(file => {
-          const opt = document.createElement('option');
-          opt.value = file;
-          opt.textContent = file.split('/').pop();
-          trackSelector.appendChild(opt);
+        // 6. Create a checkbox for each GPX file
+        function createCheckboxForFile(filename) {
+            const label = document.createElement('label');
+            label.style.display = 'block';
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = filename;
+
+            checkbox.addEventListener('change', (event) => {
+            const isChecked = event.target.checked;
+            if (isChecked) {
+                addTrackToMap(filename);
+            } else {
+                removeTrackFromMap(filename);
+            }
+            });
+
+            const labelText = document.createTextNode(' ' + filename.split('/').pop());
+            label.appendChild(checkbox);
+            label.appendChild(labelText);
+            trackListDiv.appendChild(label);
+        }
+
+        // 7. Load and display a GPX file on the map
+        function addTrackToMap(filename) {
+            const url = `${filename}`; // relative path — works on GitHub Pages or local server
+
+            const gpxLayer = new L.GPX(url, {
+            async: true,
+            marker_options: { startIconUrl: null, endIconUrl: null }
+            });
+
+            gpxLayer.on('loaded', (e) => {
+            map.fitBounds(e.target.getBounds());
+            colorTrackByDate(gpxLayer);
+            });
+
+            gpxLayer.addTo(map);
+            loadedTracks[filename] = gpxLayer;
+        }
+
+        // 8. Remove a GPX layer from the map
+        function removeTrackFromMap(filename) {
+            if (loadedTracks[filename]) {
+            map.removeLayer(loadedTracks[filename]);
+            delete loadedTracks[filename];
+            }
+        }
+
+        // 9. Color GPX segments based on date
+        function colorTrackByDate(gpxLayer) {
+            const segments = gpxLayer.getLayers();
+            const colorMap = {};
+            const colorPalette = ['red', 'blue', 'green', 'orange', 'purple', 'teal', 'brown', 'pink', 'gray'];
+            let colorIndex = 0;
+
+            segments.forEach(segment => {
+                const timeBounds = segment.get_time_bounds?.();
+                if (!timeBounds) return;
+
+                const date = timeBounds.start.toISOString().split('T')[0];
+
+                if (!colorMap[date]) {
+                colorMap[date] = colorPalette[colorIndex % colorPalette.length];
+                colorIndex++;
+                }
+
+                const color = colorMap[date];
+                segment.setStyle({ color, weight: 4 });
+            });
+        }
+        // 🔁 10. Load GPX list on page load
+        fetchGpxFilesFromGithub().then(files => {
+            if (files.length === 0) {
+            trackListDiv.innerHTML = '<p><i>No GPX files found.</i></p>';
+            return;
+            }
+            // Sort filenames descending (assuming newest is last alphabetically)
+            files.sort().reverse();
+            
+            // Auto-load the most recent one
+            createCheckboxForFile(files[0]);
+            // Also check its checkbox and trigger the change manually
+            setTimeout(() => {
+            const input = trackListDiv.querySelector(`input[value="${files[0]}"]`);
+            if (input) {
+                input.checked = true;
+                input.dispatchEvent(new Event('change'));
+            }
+            }, 100);
+
+            // Create checkboxes for the rest
+            for (let i = 1; i < files.length; i++) {
+            createCheckboxForFile(files[i]);
+            }
         });
+    </script>
 
-        // Load the first GPX file
-        loadTrack(trackSelector.options[0].value);
-      })
-      .catch(err => {
-        console.error('Failed to list GPX files:', err);
-      });
-
-    trackSelector.addEventListener('change', e => {
-      loadTrack(e.target.value);
-    });
-  </script>
 </body>
 </html>
