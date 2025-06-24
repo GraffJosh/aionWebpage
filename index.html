@@ -44,6 +44,12 @@
         display: block;
     }
 
+    @media (min-width: 125px) {
+      #trackList {
+        left: 10px;
+        right: auto;
+      }
+    }
     #trackList.hidden {
         display: none;
     }
@@ -71,11 +77,66 @@
         margin: 4px 0;
         cursor: pointer;
     }
-    .track-item input[type="checkbox"] {
-        margin: 0;
+    .track-item input[type="checkbox"],
+    .folder-checkbox {
+        transform: scale(1.4);
+        margin-right: 6px;
+    }
+    @media (max-width: 600px) {
+      .track-item input[type="checkbox"],
+      .folder-checkbox {
+        transform: scale(1.8);
+      }
+    }
+    @media (min-width: 1200px) {
+      .track-item input[type="checkbox"],
+      .folder-checkbox {
+        transform: scale(1.2);
+      }
     }
     .track-folder {
         margin-bottom: 10px;
+    }
+    .folder {
+        margin-bottom: 8px;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+    }
+
+    .folder-header {
+        display: flex;
+        align-items: center;
+        padding: 6px 10px;
+        background: #f0f0f0;
+        cursor: pointer;
+        font-weight: bold;
+        gap: 6px;
+    }
+
+    .folder-label {
+        flex: 1;
+    }
+
+    .folder-checkbox {
+        margin-left: auto;
+    }
+
+    .toggle-icon {
+        width: 16px;
+        text-align: center;
+    }
+
+    .sublist {
+        display: none;
+        padding: 6px 10px;
+        border-top: 1px solid #ddd;
+        background: #ffffff;
+    }
+
+    .sublist.expanded {
+        display: block;
     }
 
     .folder-toggle {
@@ -93,13 +154,6 @@
         padding-left: 10px;
     }
 
-    @media (min-width: 125px) {
-      #trackList {
-        width: 150px;
-        left: 10px;
-        right: auto;
-      }
-    }
   </style>
 </head>
 <body>
@@ -170,68 +224,72 @@
             return groups;  // { folder1: [...], folder2: [...], _root: [...] }
         }
 
+        
+        let isBulkUpdatingFolders = false;
         function createGroupedUI(fileGroups) {
             trackCheckboxesDiv.innerHTML = ''; // Clear existing content
 
             Object.entries(fileGroups).forEach(([folderName, files]) => {
-                const section = document.createElement('div');
-                section.classList.add('track-folder');
+                const folderDiv = document.createElement('div');
+                folderDiv.classList.add('folder');
 
-                const toggle = document.createElement('button');
-                toggle.classList.add('folder-toggle');
-                toggle.textContent = `▸ ${folderName}`;
-                toggle.dataset.open = 'false';
+                const folderHeader = document.createElement('div');
+                folderHeader.classList.add('folder-header');
 
-                const fileContainer = document.createElement('div');
-                fileContainer.classList.add('folder-files');
-                fileContainer.style.display = 'none';
+                const toggleIcon = document.createElement('span');
+                toggleIcon.textContent = '▸';
+                toggleIcon.className = 'toggle-icon';
 
-                toggle.addEventListener('click', () => {
-                    const open = toggle.dataset.open === 'true';
-                    toggle.dataset.open = (!open).toString();
-                    toggle.textContent = `${open ? '▸' : '▾'} ${folderName}`;
-                    fileContainer.style.display = open ? 'none' : 'block';
+                const folderLabel = document.createElement('span');
+                folderLabel.textContent = folderName === '_root' ? 'Main Folder' : folderName;
+                folderLabel.className = 'folder-label';
 
-                    // Optional: select all when opened
-                    if (!open) {
-                        const checkboxes = fileContainer.querySelectorAll('input[type="checkbox"]');
-                        checkboxes.forEach(cb => {
-                            if (!cb.checked) {
-                                cb.checked = true;
-                                cb.dispatchEvent(new Event('change'));
-                            }
-                        });
-                    }
-                });
+                const folderCheckbox = document.createElement('input');
+                folderCheckbox.type = 'checkbox';
+                folderCheckbox.className = 'folder-checkbox';
+                folderCheckbox.title = 'Toggle all tracks in this folder';
+
+                folderHeader.append(toggleIcon, folderLabel, folderCheckbox);
+                folderDiv.appendChild(folderHeader);
+
+                const subList = document.createElement('div');
+                subList.className = 'sublist';
+
+                const childCheckboxes = [];
 
                 files.forEach(file => {
-                    const checkbox = document.createElement('input');
-                    checkbox.type = 'checkbox';
-                    checkbox.value = file;
-                    checkbox.id = `track-${file.replace(/[^\w-]/g, '_')}`;
+                    const checkboxWrapper = createCheckbox(file);
+                    const checkbox = checkboxWrapper.querySelector('input[type="checkbox"]');
+                    subList.appendChild(checkboxWrapper);
+                    childCheckboxes.push(checkbox);
 
-                    const label = document.createElement('label');
-                    label.setAttribute('for', checkbox.id);
-                    label.textContent = file.split('/').pop();
-
-                    const wrapper = document.createElement('div');
-                    wrapper.classList.add('track-item');
-                    wrapper.appendChild(checkbox);
-                    wrapper.appendChild(label);
-                    fileContainer.appendChild(wrapper);
-
-                    checkbox.addEventListener('change', (e) => {
-                        const isChecked = e.target.checked;
-                        isChecked ? addTrackToMap(file) : removeTrackFromMap(file);
-                        if (window.innerWidth < 600) {
-                            trackListDiv.classList.add('hidden');
+                    checkbox.addEventListener('change', () => {
+                        if (!isBulkUpdatingFolders) {
+                            const anyChecked = childCheckboxes.some(cb => cb.checked);
+                            folderCheckbox.checked = anyChecked;
                         }
                     });
                 });
 
-                section.appendChild(toggle);
-                section.appendChild(fileContainer);
-                trackCheckboxesDiv.appendChild(section);
+                folderCheckbox.addEventListener('change', () => {
+                    isBulkUpdatingFolders = true;
+                    childCheckboxes.forEach(cb => {
+                        if (cb.checked !== folderCheckbox.checked) {
+                            cb.checked = folderCheckbox.checked;
+                            cb.dispatchEvent(new Event('change'));
+                        }
+                    });
+                    isBulkUpdatingFolders = false;
+                });
+
+                folderHeader.addEventListener('click', (e) => {
+                    if (e.target === folderCheckbox) return;
+                    const isExpanded = subList.classList.toggle('expanded');
+                    toggleIcon.textContent = isExpanded ? '▾' : '▸';
+                });
+
+                folderDiv.appendChild(subList);
+                trackCheckboxesDiv.appendChild(folderDiv);
             });
         }
 
@@ -246,21 +304,19 @@
 
             const label = document.createElement('label');
             label.setAttribute('for', id);
-            label.textContent = ' ' + filename.split('/').pop(); // human-readable
+            label.textContent = ' ' + filename.split('/').pop();
 
             const wrapper = document.createElement('div');
             wrapper.classList.add('track-item');
             wrapper.appendChild(checkbox);
             wrapper.appendChild(label);
-            trackCheckboxesDiv.appendChild(wrapper);
 
             checkbox.addEventListener('change', (e) => {
                 const isChecked = e.target.checked;
                 isChecked ? addTrackToMap(filename) : removeTrackFromMap(filename);
 
-                // Collapse on mobile
                 if (window.innerWidth < 600) {
-                    trackListDiv.classList.add('hidden');
+                trackListDiv.classList.add('hidden');
                 }
             });
 
@@ -268,7 +324,10 @@
                 checkbox.checked = true;
                 checkbox.dispatchEvent(new Event('change'));
             }
+
+            return wrapper;
         }
+
 
 
         // === 6. Load GPX file and color by date ===
@@ -343,14 +402,40 @@
             });
         }
 
-        fetchGroupedGpxFiles().then(fileGroups => {
+        // Helper: Fetch first point date from a GPX file
+        async function getGpxFirstDate(gpxPath) {
+            const rawUrl = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${gpxPath}`;
+            try {
+                const res = await fetch(rawUrl);
+                const text = await res.text();
+                const match = text.match(/<time>([^<]+)<\/time>/);
+                if (match) return new Date(match[1]);
+            } catch {}
+            return new Date(0); // fallback
+        }
+
+        // Sort files in each folder by date
+        async function sortGroupedFilesByDate(fileGroups) {
+            for (const folder in fileGroups) {
+                const files = fileGroups[folder];
+                const filesWithDates = await Promise.all(
+                    files.map(async file => ({
+                        file,
+                        date: await getGpxFirstDate(file)
+                    }))
+                );
+                filesWithDates.sort((a, b) => a.date - b.date);
+                fileGroups[folder] = filesWithDates.map(f => f.file);
+            }
+        }
+
+        fetchGroupedGpxFiles().then(async fileGroups => {
             if (Object.keys(fileGroups).length === 0) {
                 trackCheckboxesDiv.innerHTML = '<i>No GPX files found.</i>';
                 return;
             }
-
+            await sortGroupedFilesByDate(fileGroups);
             createGroupedUI(fileGroups);
-
             // Auto-select most recent file in all folders
             const allFiles = Object.values(fileGroups).flat();
             if (allFiles.length) {
