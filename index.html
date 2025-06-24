@@ -153,6 +153,38 @@
     .folder-files {
         padding-left: 10px;
     }
+    .track-info-bubble {
+        position: absolute;
+        right: -130px; /* adjust as needed */
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.75);
+        color: white;
+        padding: 3px 7px;
+        border-radius: 5px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    /* styles.css or your main CSS file */
+.track-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-bubble {
+  background-color: #eee;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  color: #333;
+  user-select: none;
+  white-space: nowrap;
+}
+
 
   </style>
 </head>
@@ -170,7 +202,7 @@
     </div>
 
   <div id="map"></div>
-<script src="script.js"></script>
+<script type="module" src="mainscript.js"></script>
 
 </body>
 </html>
