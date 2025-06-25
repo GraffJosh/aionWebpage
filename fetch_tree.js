@@ -184,7 +184,7 @@ export async function sortTreeByDate(node) {
       date: await getGpxFirstDate(file)
     }))
   );
-  filesWithDates.sort((a, b) => a.date - b.date);
+  filesWithDates.sort((a, b) => b.date - a.date);
   node.files = filesWithDates.map(f => f.file);
 
   // Recursively sort subfolders

@@ -190,7 +190,7 @@ export async function addBoatMarker(tree) {
 
     const boatIcon = L.divIcon({
         className: 'material-boat-icon',
-        html: '<span class="material-symbols-outlined" style="font-size:45px; color:indigo;">sailing</span>',
+        html: '<span class="material-symbols-outlined" style="font-size:45px; color:crimson;">sailing</span>',
         iconSize: [45,45],
         iconAnchor: [16, 16],
     });
