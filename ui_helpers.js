@@ -1,4 +1,24 @@
-// ui_helpers.js
+/**
+ * ui_helpers.js
+ * 
+ * This module provides helper functions for UI components related to GPX track selection
+ * and display. It includes utilities for creating track checkboxes and formatting
+ * track statistics for display in the UI.
+ * 
+ * Features:
+ * - Creates a checkbox UI element for a GPX track, with event handlers to add/remove the track from the map.
+ * - Formats duration (seconds) and distance (meters) into a user-friendly string (hours, minutes, nautical miles).
+ * 
+ * Exports:
+ *   - createCheckbox(filename): Returns a DOM element for a track checkbox and label.
+ *   - formatDurationDistance(durationSeconds, distanceMeters): Returns a formatted string for stats.
+ * 
+ * Dependencies:
+ *   - map.js (for addTrackToMap, removeTrackFromMap)
+ * 
+ * Usage:
+ *   Import and use these helpers when rendering track lists and displaying track statistics.
+ */
 import { addTrackToMap, removeTrackFromMap } from './map.js';
 
 

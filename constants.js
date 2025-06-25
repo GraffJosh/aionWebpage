@@ -4,10 +4,9 @@ export const loadedTracks = {};
 export const globalColorMap = {};
 export const globalColorPalette = ['red', 'blue', 'green', 'orange', 'purple', 'teal', 'brown', 'pink', 'gray'];
 export const globalColorIndex = { value: 0 };
-
 export const fallbackView = {
     center: [39.279545, -76.584707],
-    zoom: 13
+    zoom: 11
 };
 
 export const GITHUB_USER = 'graffjosh';

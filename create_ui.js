@@ -1,3 +1,27 @@
+/**
+ * create_ui.js
+ * 
+ * This module provides functions to recursively generate the UI for displaying 
+ * a tree of GPX files and folders, including checkboxes for selection and 
+ * info bubbles for track/folder statistics (duration and distance).
+ * 
+ * Features:
+ * - Renders a hierarchical folder/file structure with collapsible folders.
+ * - Displays checkboxes for each file and folder, supporting bulk selection.
+ * - Shows info bubbles with asynchronously-fetched GPX statistics.
+ * - Handles folder stats aggregation and UI updates.
+ * 
+ * Exports:
+ *   - createUIFromTree(tree, container, depth): Recursively renders the UI for a folder tree.
+ * 
+ * Dependencies:
+ *   - createCheckbox, formatDurationDistance (from ui_helpers.js)
+ *   - getGpxInfo (from fetch_tree.js)
+ * 
+ * Usage:
+ *   Import and call createUIFromTree with the folder tree structure and a container element.
+ */
+
 // create_ui.js
 import { createCheckbox, formatDurationDistance } from './ui_helpers.js';
 import { getGpxInfo } from './fetch_tree.js';
@@ -34,6 +58,18 @@ async function getFolderStats(node, getGpxInfo) {
 }
 
 
+/**
+ * Recursively creates a UI tree structure representing folders and GPX files, 
+ * including checkboxes and info bubbles for duration and distance.
+ * 
+ * @async
+ * @param {Object} tree - The tree structure representing folders and files. 
+ *   - {Object[]} [tree.files] - Array of file objects (GPX files).
+ *   - {Object} [tree.subfolders] - Object mapping folder names to subfolder trees.
+ * @param {HTMLElement} container - The DOM element to which the UI elements will be appended.
+ * @param {number} [depth=0] - The current depth in the tree (used for recursive calls).
+ * @returns {Promise<void>} Resolves when the UI for the entire tree has been created.
+ */
 async function createUIFromTree(tree, container, depth = 0) {
     // Add GPX files UI with info bubbles
     if (tree.files) {
@@ -104,10 +140,14 @@ async function createUIFromTree(tree, container, depth = 0) {
             const checkboxes = subList.querySelectorAll('input[type="checkbox"]');
             folderCheckbox.addEventListener('change', () => {
                 isBulkUpdating = true;
-                checkboxes.forEach(cb => {
-                    cb.checked = folderCheckbox.checked;
-                    cb.dispatchEvent(new Event('change'));
-                });
+                try {
+                    checkboxes.forEach(cb => {
+                        cb.checked = folderCheckbox.checked;
+                        cb.dispatchEvent(new Event('change'));
+                    });
+                } catch (e) {
+                    console.error('Error updating checkboxes:', e);
+                }
                 isBulkUpdating = false;
             });
 

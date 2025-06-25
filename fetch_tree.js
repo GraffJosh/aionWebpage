@@ -1,5 +1,37 @@
-// fetch_tree.js
-
+/**
+ * fetch_tree.js
+ * 
+ * This module provides functions for fetching, parsing, and organizing GPX files
+ * from a GitHub repository. It builds a nested folder tree structure, extracts
+ * metadata from GPX files, and provides utilities for sorting and analyzing tracks.
+ * 
+ * Features:
+ * - Fetches the GitHub repository tree and constructs a nested folder/file structure.
+ * - Fetches raw GPX file content from GitHub.
+ * - Extracts the date of the first track point from a GPX file.
+ * - Parses GPX files to compute duration and distance.
+ * - Recursively sorts folders and files by track date.
+ * - Finds the most recent track in a folder tree.
+ * - Finds the start point of a Leaflet Polyline or LayerGroup.
+ * 
+ * Exports:
+ *   - fetchGpxTree(): Fetch and build the nested GPX folder tree.
+ *   - fetchGpxText(gpxPath): Fetch raw GPX file text.
+ *   - getGpxFirstDate(gpxPath): Get the date of the first point in a GPX file.
+ *   - parseGpxInfo(gpxText): Parse GPX text for duration and distance.
+ *   - getGpxInfo(gpxPath): Fetch and parse GPX file for duration and distance.
+ *   - sortTreeByDate(node): Recursively sort the folder tree by track dates.
+ *   - findMostRecentTrack(node): Find the most recent track in the tree.
+ *   - findStartPoint(layer): Find the start point of a Leaflet Polyline or LayerGroup.
+ * 
+ * Dependencies:
+ *   - constants.js (for GitHub repo info and GPX directory)
+ *   - Leaflet (for findStartPoint)
+ * 
+ * Usage:
+ *   Import and use these functions to fetch, organize, and analyze GPX files
+ *   from a GitHub repository for mapping or UI
+ * */
 import {
   GITHUB_USER,
   GITHUB_REPO,
@@ -12,27 +44,32 @@ import {
  * structure with GPX files organized by folders up to any depth.
  */
 export async function fetchGpxTree() {
-  const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/git/trees/${GITHUB_BRANCH}?recursive=1`;
-  const response = await fetch(url);
-  const data = await response.json();
-  if (!data.tree) return {};
+  try {
+    const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/git/trees/${GITHUB_BRANCH}?recursive=1`;
+    const response = await fetch(url);
+    const data = await response.json();
+    if (!data.tree) return {};
 
-  // Build nested tree structure { name, files: [], subfolders: {} }
-  const root = {
-    name: GPX_DIRECTORY,
-    files: [],
-    subfolders: {}
-  };
+    // Build nested tree structure { name, files: [], subfolders: {} }
+    const root = {
+      name: GPX_DIRECTORY,
+      files: [],
+      subfolders: {}
+    };
 
-  data.tree.forEach(item => {
-    if (item.path.startsWith(GPX_DIRECTORY + '/') && item.path.endsWith('.gpx')) {
-      const relativePath = item.path.slice(GPX_DIRECTORY.length + 1); // strip gpxFiles/
-      const parts = relativePath.split('/');
-      insertPath(root, parts, item.path);
-    }
-  });
+    data.tree.forEach(item => {
+      if (item.path.startsWith(GPX_DIRECTORY + '/') && item.path.endsWith('.gpx')) {
+        const relativePath = item.path.slice(GPX_DIRECTORY.length + 1); // strip gpxFiles/
+        const parts = relativePath.split('/');
+        insertPath(root, parts, item.path);
+      }
+    });
 
-  return root;
+    return root;
+  } catch (error) {
+    console.error('Error fetching GPX tree:', error);
+    return {};
+  }
 }
 
 /**
@@ -177,8 +214,13 @@ export async function sortTreeByDate(node) {
 }
 
 /**
- * Recursively find the most recent track in the tree (by GPX <time> tag).
- * Returns the file path of the most recent track, or null if none.
+ * Recursively finds the most recent GPX track file in a folder tree structure.
+ *
+ * @async
+ * @param {Object} node - The current folder node containing files and subfolders.
+ * @param {Object[]} node.files - Array of file objects in the current folder.
+ * @param {Object.<string, Object>} node.subfolders - An object mapping subfolder names to their respective folder nodes.
+ * @returns {Promise<Object|null>} The file object representing the most recent track, or null if none found.
  */
 export async function findMostRecentTrack(node) {
   let mostRecent = null;
@@ -219,6 +261,36 @@ export function findStartPoint(layer) {
             const point = findStartPoint(sublayer);
             if (point) return point;
         }
+    }
+    return null;
+}
+
+/**
+ * Recursively find the end point (last coordinate) of a Leaflet Polyline or LayerGroup.
+ * Returns a LatLng object or null if not found.
+ */
+export function findEndPoint(layer) {
+    if (layer instanceof L.Polyline) {
+        const latlngs = layer.getLatLngs();
+        if (latlngs.length > 0) {
+            // Handle multi-part polylines
+            if (Array.isArray(latlngs[0])) {
+                // Multi-part: get last point of last part
+                const lastPart = latlngs[latlngs.length - 1];
+                return lastPart[lastPart.length - 1];
+            } else {
+                // Single-part: get last point
+                return latlngs[latlngs.length - 1];
+            }
+        }
+    } else if (layer instanceof L.LayerGroup) {
+        // Recursively check sublayers for the last end point found
+        let lastPoint = null;
+        for (const sublayer of Object.values(layer._layers)) {
+            const point = findEndPoint(sublayer);
+            if (point) lastPoint = point;
+        }
+        return lastPoint;
     }
     return null;
 }

@@ -1,6 +1,35 @@
-import { globalColorMap, globalColorPalette, globalColorIndex, fallbackView, loadedTracks } from './constants.js';
-import { getGpxInfo, findStartPoint} from './fetch_tree.js';
+/**
+ * map.js
+ * 
+ * This module initializes the Leaflet map and provides functions to add and remove GPX tracks,
+ * manage their display, and handle map view fitting and track coloring.
+ * 
+ * Features:
+ * - Initializes the Leaflet map with OpenStreetMap and OpenSeaMap layers.
+ * - Adds GPX tracks to the map with color-coding and info labels (duration, distance).
+ * - Removes tracks and associated info labels from the map.
+ * - Fits the map view to all loaded tracks.
+ * - Assigns consistent colors to tracks based on filename.
+ * 
+ * Exports:
+ *   - addTrackToMap(filename): Loads and displays a GPX track on the map.
+ *   - removeTrackFromMap(filename): Removes a GPX track and its info label from the map.
+ *   - addBoatMarker(tree): Adds a marker for the most recent boat position based on the latest GPX track.
+ * 
+ * Dependencies:
+ *   - constants.js (for color palette, fallback view, loadedTracks)
+ *   - fetch_tree.js (for getGpxInfo, findStartPoint)
+ *   - ui_helpers.js (for formatDurationDistance)
+ *   - Leaflet and leaflet-gpx
+ * 
+ * Usage:
+ *   Import and use addTrackToMap and removeTrackFromMap to control GPX track display on the map.
+ * */
+
+import { GPX_DIRECTORY, globalColorMap, globalColorPalette, globalColorIndex, fallbackView, loadedTracks } from './constants.js';
+import { getGpxInfo, findStartPoint, findEndPoint, findMostRecentTrack, fetchGpxText} from './fetch_tree.js';
 import { formatDurationDistance } from './ui_helpers.js';
+let boatMarker = null;
 const map = L.map('map').setView(fallbackView.center, fallbackView.zoom);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data © OpenStreetMap contributors'
@@ -12,10 +41,7 @@ console.log('L.GPX:', L.GPX);
 
 
 function addTrackToMap(filename) {
-    console.log('Loading GPX file:', filename);  // Debug log
 
-    // const rawGpxUrl = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${filename}`;
-    
     const gpxLayer = new L.GPX(filename, {
         async: true,
         marker_options: { startIconUrl: null, endIconUrl: null }
@@ -27,21 +53,19 @@ function addTrackToMap(filename) {
         try {
             const info = await getGpxInfo(filename);
             const summary = formatDurationDistance(info.durationSeconds, info.distanceMeters);
-            console.log('Track info summary:', summary);
 
-            const startPoint = findStartPoint(gpxLayer);
+            const markerPoint = findEndPoint(gpxLayer);
 
-            if (startPoint) {
+            if (markerPoint) {
                 const infoIcon = L.divIcon({
                     className: 'track-info-label',
                     html: summary,
                     iconSize: null
                 });
 
-                const label = L.marker(startPoint, { icon: infoIcon, interactive: false });
+                const label = L.marker(markerPoint, { icon: infoIcon, interactive: false });
                 label.addTo(map);
                 gpxLayer._infoLabel = label;
-                console.log('Added label at', startPoint);
             } else {
                 console.warn('No start point found for:', filename);
             }
@@ -56,19 +80,43 @@ function addTrackToMap(filename) {
 
 
 function removeTrackFromMap(filename) {
-    if (loadedTracks[filename]) {
-        const layer = loadedTracks[filename];
-        if (layer._infoLabel) {
-            map.removeLayer(layer._infoLabel);
-        }
-        map.removeLayer(layer);
-        delete loadedTracks[filename];
+    const gpxLayer = loadedTracks[filename];
+    if (!gpxLayer) {
+        console.warn('Track not found in loadedTracks:', filename);
+        return;
+    }
 
-        fitMapToAllTracks();
+    // Remove info label
+    if (gpxLayer._infoLabel) {
+        map.removeLayer(gpxLayer._infoLabel);
+    }
 
-        if (Object.keys(loadedTracks).length === 0) {
-            map.setView(fallbackView.center, fallbackView.zoom);
-        }
+    // Remove all child layers explicitly
+    const childLayers = gpxLayer.getLayers();
+    if (childLayers && childLayers.length) {
+        childLayers.forEach(layer => {
+            if (map.hasLayer(layer)) {
+                map.removeLayer(layer);
+            }
+        });
+    }
+
+    // Remove parent gpxLayer if needed
+    if (map.hasLayer(gpxLayer)) {
+        map.removeLayer(gpxLayer);
+    }
+
+    delete loadedTracks[filename];
+    fitMapToAllTracks();
+
+    if (Object.keys(loadedTracks).length === 0) {
+        map.setView(fallbackView.center, fallbackView.zoom);
+    }
+}
+
+export function resetViewToFallback() {
+    if (Object.keys(loadedTracks).length === 0) {
+        map.setView(fallbackView.center, fallbackView.zoom);
     }
 }
 
@@ -103,5 +151,65 @@ function colorTrackByFile(gpxLayer, filename) {
         }
     });
 }
+
+
+export async function addBoatMarker(tree) {
+  console.log('🔄 Starting addBoatMarker...');
+
+  const mostRecent = await findMostRecentTrack(tree);
+  if (!mostRecent) {
+    console.warn('⚠️ No most recent track found. Aborting boat marker.');
+    return;
+  }
+
+  console.log(`📍 Most recent track path: ${mostRecent}`);
+
+  const gpxText = await fetchGpxText(mostRecent);
+  if (!gpxText) {
+    console.warn(`⚠️ Failed to fetch GPX text for ${mostRecent}`);
+    return;
+  }
+
+  console.log('📄 GPX text successfully fetched. Parsing XML...');
+
+  const parser = new DOMParser();
+  const xml = parser.parseFromString(gpxText, 'application/xml');
+  const trkpts = xml.querySelectorAll('trkpt');
+  console.log(`🛰️ Found ${trkpts.length} track points in GPX file.`);
+
+  if (trkpts.length === 0) {
+    console.warn('⚠️ No <trkpt> elements found in GPX. Cannot place boat marker.');
+    return;
+  }
+
+  const lastPt = trkpts[trkpts.length - 1];
+  const lat = parseFloat(lastPt.getAttribute('lat'));
+  const lon = parseFloat(lastPt.getAttribute('lon'));
+
+  console.log(`🧭 Last point coordinates: lat=${lat}, lon=${lon}`);
+
+    const boatIcon = L.divIcon({
+        className: 'material-boat-icon',
+        html: '<span class="material-symbols-outlined" style="font-size:45px; color:indigo;">sailing</span>',
+        iconSize: [45,45],
+        iconAnchor: [16, 16],
+    });
+
+  if (boatMarker) {
+    console.log('🗑️ Removing existing boat marker...');
+    map.removeLayer(boatMarker);
+  }
+
+  boatMarker = L.marker([lat, lon], {
+    icon: boatIcon,
+    interactive: false
+  }).addTo(map);
+  fallbackView.center = [lat, lon];
+
+  boatMarker.setZIndexOffset(1000);
+
+  console.log(`✅ Boat marker added at [${lat}, ${lon}] using icon URL: ${boatIcon.options.iconUrl}`);
+}
+
 
 export { addTrackToMap, removeTrackFromMap };
