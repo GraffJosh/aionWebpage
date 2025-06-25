@@ -27,7 +27,7 @@ import { trackListDiv, trackCheckboxesDiv } from './constants.js';
 import { fetchGpxTree, sortTreeByDate, findMostRecentTrack } from './fetch_tree.js';
 import { createUIFromTree } from './create_ui.js';
 import { addTrackToMap, removeTrackFromMap, addBoatMarker, resetViewToFallback } from './map.js';
-
+import { escapeCSSSelector } from './ui_helpers.js';
 // === UI Controls ===
 document.getElementById('selectAll').addEventListener('click', () => {
   const checkboxes = trackListDiv.querySelectorAll('input[type="checkbox"]');
@@ -53,11 +53,6 @@ document.getElementById('toggleTrackList').addEventListener('click', () => {
   trackListDiv.classList.toggle('hidden');
 });
 
-// Add event listeners to track checkboxes to add/remove tracks on the map
-function addTrackCheckboxListeners() {
-  const checkboxes = trackCheckboxesDiv.querySelectorAll('input[type="checkbox"]');
-
-}
 
 // === Initialization ===
 // Inside the initialization:
@@ -66,21 +61,53 @@ fetchGpxTree().then(async tree => {
   trackCheckboxesDiv.innerHTML = '';
   await createUIFromTree(sortedTree, trackCheckboxesDiv);
 
-  // addTrackCheckboxListeners();
+  await addBoatMarker(sortedTree);
 
-  await addBoatMarker(sortedTree); // ← ✅ Always add on page load
-  resetViewToFallback();
-  // setInterval(() => {
-  //   addBoatMarker(window.gpxTree);
-  // }, 60_000);
+  // === Select track from URL if provided ===
+  const params = new URLSearchParams(window.location.search);
 
-  const mostRecentTrack = await findMostRecentTrack(sortedTree);
-  if (mostRecentTrack) {
-    const checkbox = trackCheckboxesDiv.querySelector(`input[value="${mostRecentTrack.path}"]`);
-    if (checkbox) {
-      checkbox.checked = true;
-      checkbox.dispatchEvent(new Event('change'));
-    }
+  // === Select tracks from ?tracks= ===
+  const trackList = params.get('tracks');
+  if (trackList) {
+    const filenames = trackList.split(',').map(decodeURIComponent);
+    filenames.forEach(filename => {
+      const selector = `input[type="checkbox"][value="${CSS.escape(filename)}"]`;
+      const checkbox = trackCheckboxesDiv.querySelector(selector);
+      if (checkbox) {
+        checkbox.checked = true;
+        checkbox.dispatchEvent(new Event('change'));
+      } else {
+        console.warn(`⚠️ Track not found: ${filename}`);
+      }
+    });
   }
-});
 
+  // === Select folders from ?folders= ===
+  const folderList = params.get('folders');
+  if (folderList) {
+    const folderNames = folderList.split(',').map(decodeURIComponent);
+    folderNames.forEach(folderName => {
+      const folderHeader = [...trackCheckboxesDiv.querySelectorAll('.folder-header')]
+        .find(el => el.querySelector('.folder-label')?.textContent.trim() === folderName);
+
+      if (folderHeader) {
+        const folderCheckbox = folderHeader.querySelector('input.folder-checkbox');
+        if (folderCheckbox && !folderCheckbox.checked) {
+          folderCheckbox.checked = true;
+          folderCheckbox.dispatchEvent(new Event('change'));
+        }
+
+        // Expand the folder
+        const sublist = folderHeader.nextElementSibling;
+        if (sublist && sublist.classList.contains('sublist')) {
+          sublist.classList.add('expanded');
+          const toggleIcon = folderHeader.querySelector('.toggle-icon');
+          if (toggleIcon) toggleIcon.textContent = '▾';
+        }
+      } else {
+        console.warn(`⚠️ Folder not found: ${folderName}`);
+      }
+    });
+  }
+
+});

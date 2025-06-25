@@ -23,10 +23,11 @@
  */
 
 // create_ui.js
-import { createCheckbox, formatDurationDistance } from './ui_helpers.js';
+import { createCheckbox, formatDurationDistance,updateUrlParams } from './ui_helpers.js';
 import { getGpxInfo } from './fetch_tree.js';
 
 let isBulkUpdating = false;
+export { isBulkUpdating };
 
 async function getFolderStats(node, getGpxInfo) {
     let totalDuration = 0;
@@ -144,11 +145,14 @@ async function createUIFromTree(tree, container, depth = 0) {
                     checkboxes.forEach(cb => {
                         cb.checked = folderCheckbox.checked;
                         cb.dispatchEvent(new Event('change'));
+                        // params.set('folders', filename);
                     });
                 } catch (e) {
                     console.error('Error updating checkboxes:', e);
                 }
+                updateUrlParams();
                 isBulkUpdating = false;
+
             });
 
             checkboxes.forEach(cb => {
