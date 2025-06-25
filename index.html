@@ -167,23 +167,40 @@
         pointer-events: none;
         user-select: none;
     }
+    .folder-header .info-bubble {
+        margin-left: auto;
+        background: #ddd;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        color: #333;
+    }
 
     /* styles.css or your main CSS file */
-.track-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+    .track-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
 
-.info-bubble {
-  background-color: #eee;
-  border-radius: 12px;
-  padding: 2px 8px;
-  font-size: 0.8rem;
-  color: #333;
-  user-select: none;
-  white-space: nowrap;
-}
+    .info-bubble {
+        background-color: #eee;
+        border-radius: 12px;
+        padding: 2px 8px;
+        font-size: 0.8rem;
+        color: #333;
+        user-select: none;
+        white-space: nowrap;
+    }
+    .track-info-label {
+        background: rgba(0,0,0,0.7);
+        color: white;
+        padding: 2px 6px;
+        border-radius: 6px;
+        font-size: 12px;
+        white-space: nowrap;
+        pointer-events: none;
+    }
 
 
   </style>
@@ -192,6 +209,7 @@
     <div id="trackPanel">
         <button id="toggleTrackList">☰ Tracks</button>
         <div id="trackList">
+            
             <div id="trackControls">
                 <button id="selectAll">Select All</button>
                 <button id="clearAll">Clear All</button>

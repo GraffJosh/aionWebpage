@@ -35,18 +35,14 @@ function createCheckbox(filename) {
  * Format duration (seconds) and distance (meters) into a user-friendly string.
  * Example: "Duration: 1h 12m, Distance: 10.3 km"
  */
-function formatDurationDistance(durationSeconds, distanceMeters) {
+export function formatDurationDistance(durationSeconds, distanceMeters) {
     const hours = Math.floor(durationSeconds / 3600);
     const minutes = Math.floor((durationSeconds % 3600) / 60);
-
-    let durationStr = '';
-    if (hours > 0) durationStr += `${hours}h `;
-    durationStr += `${minutes}m`;
-
-    // Convert meters to kilometers with one decimal place
-    const distanceKm = (distanceMeters / 1000).toFixed(1);
-
-    return `Duration: ${durationStr}, Distance: ${distanceKm} km`;
+    const distanceNauticalMiles = distanceMeters * 0.000539957;
+    const timeStr = `${hours}h ${minutes}m`;
+    const distStr = `${distanceNauticalMiles.toFixed(1)} nm`;
+    return `${timeStr} • ${distStr}`;
 }
 
-export { createCheckbox, formatDurationDistance };
+
+export { createCheckbox };

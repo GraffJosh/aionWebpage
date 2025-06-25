@@ -4,6 +4,36 @@ import { getGpxInfo } from './fetch_tree.js';
 
 let isBulkUpdating = false;
 
+async function getFolderStats(node, getGpxInfo) {
+    let totalDuration = 0;
+    let totalDistance = 0;
+
+    // Sum this folder's files
+    if (node.files) {
+        for (const file of node.files) {
+            try {
+                const { durationSeconds, distanceMeters } = await getGpxInfo(file);
+                totalDuration += durationSeconds;
+                totalDistance += distanceMeters;
+            } catch (e) {
+                // ignore file if it fails
+            }
+        }
+    }
+
+    // Recurse into subfolders
+    if (node.subfolders) {
+        for (const sub of Object.values(node.subfolders)) {
+            const stats = await getFolderStats(sub, getGpxInfo);
+            totalDuration += stats.totalDuration;
+            totalDistance += stats.totalDistance;
+        }
+    }
+
+    return { totalDuration, totalDistance };
+}
+
+
 async function createUIFromTree(tree, container, depth = 0) {
     // Add GPX files UI with info bubbles
     if (tree.files) {
@@ -35,7 +65,22 @@ async function createUIFromTree(tree, container, depth = 0) {
 
             const folderHeader = document.createElement('div');
             folderHeader.classList.add('folder-header');
-
+            
+            
+            // Create and insert info bubble for folder
+            const folderInfo = document.createElement('span');
+            folderInfo.className = 'info-bubble';
+            folderInfo.textContent = 'Loading...';
+            folderHeader.appendChild(folderInfo);
+            
+            // Fetch cumulative folder stats
+            getFolderStats(tree.subfolders[folderName], getGpxInfo).then(({ totalDuration, totalDistance }) => {
+                folderInfo.textContent = formatDurationDistance(totalDuration, totalDistance);
+            }).catch(() => {
+                folderInfo.textContent = 'Info unavailable';
+            });
+            
+            
             const toggleIcon = document.createElement('span');
             toggleIcon.textContent = '▸';
             toggleIcon.className = 'toggle-icon';
@@ -48,7 +93,7 @@ async function createUIFromTree(tree, container, depth = 0) {
             folderCheckbox.type = 'checkbox';
             folderCheckbox.className = 'folder-checkbox';
 
-            folderHeader.append(toggleIcon, label, folderCheckbox);
+            folderHeader.append(toggleIcon, label, folderInfo, folderCheckbox);
             folderDiv.appendChild(folderHeader);
 
             const subList = document.createElement('div');

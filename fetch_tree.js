@@ -207,3 +207,18 @@ export async function findMostRecentTrack(node) {
 
   return mostRecent;
 }
+export function findStartPoint(layer) {
+    if (layer instanceof L.Polyline) {
+        const latlngs = layer.getLatLngs();
+        if (latlngs.length > 0) {
+            // Handle multi-part polylines
+            return Array.isArray(latlngs[0]) ? latlngs[0][0] : latlngs[0];
+        }
+    } else if (layer instanceof L.LayerGroup) {
+        for (const sublayer of Object.values(layer._layers)) {
+            const point = findStartPoint(sublayer);
+            if (point) return point;
+        }
+    }
+    return null;
+}
