@@ -227,10 +227,11 @@
     </section>
     
 
-    <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000; cursor:pointer;">
-        <img id="lightbox-img" style="max-width:90vw; max-height:90vh; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.7);" />
-        <span class="lightbox-close" style="position:absolute; top:20px; right:30px; font-size:2rem; color:white;">×</span>
-    </div>
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000; cursor:pointer; flex-direction:column;">
+  <img id="lightbox-img" style="max-width:90vw; max-height:80vh; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.7);" />
+  <div style="color: white; margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">← swipe or use arrow keys →</div>
+  <span class="lightbox-close" style="position:absolute; top:20px; right:30px; font-size:2rem; color:white;">×</span>
+</div>
 
   </main>
 
@@ -328,30 +329,48 @@
     openLightbox(currentIndex);
   }
 
-  function enableLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn = document.querySelector('.lightbox-close');
+    function enableLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.lightbox-close');
 
-    // Only close lightbox if background is clicked (not image)
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) closeLightbox();
-    });
+        // Close on background click
+        lightbox.addEventListener('click', e => {
+            if (e.target === lightbox) closeLightbox();
+        });
 
-    closeBtn.addEventListener('click', closeLightbox);
+        closeBtn.addEventListener('click', closeLightbox);
 
-    // Prevent image click from closing lightbox
-    lightboxImg.addEventListener('click', e => {
-      e.stopPropagation();
-    });
+        // Prevent image click from closing lightbox
+        lightboxImg.addEventListener('click', e => e.stopPropagation());
 
-    // Enable swipe gestures on the image
-    if (window.Hammer) {
-      const hammer = new Hammer(lightboxImg);
-      hammer.on('swipeleft', () => showNextImage());
-      hammer.on('swiperight', () => showPrevImage());
+        // Swipe support
+        if (window.Hammer) {
+            const hammer = new Hammer(lightbox);
+            hammer.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
+            hammer.on('swipeleft', () => showNextImage());
+            hammer.on('swiperight', () => showPrevImage());
+        }
+
+        // Keyboard support
+        document.addEventListener('keydown', e => {
+            if (lightbox.style.display !== 'flex') return;
+
+            switch (e.key) {
+            case 'ArrowRight':
+                showNextImage();
+                break;
+            case 'ArrowLeft':
+                showPrevImage();
+                break;
+            case 'Escape':
+                closeLightbox();
+                break;
+            }
+        });
     }
-  }
+
+
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadGallery);
