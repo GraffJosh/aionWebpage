@@ -225,9 +225,9 @@
     </section>
     
 
-    <div id="lightbox" style="display: none;">
-    <span class="lightbox-close">&times;</span>
-    <img id="lightbox-img" src="" alt="Expanded view" />
+    <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000; cursor:pointer;">
+    <img id="lightbox-img" style="max-width:90vw; max-height:90vh; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.7);" />
+    <span class="lightbox-close" style="position:absolute; top:20px; right:30px; font-size:2rem; color:white;">×</span>
     </div>
 
   </main>
@@ -236,61 +236,58 @@
     © 2025 SV Aion. All rights reserved.
   </footer>
 
-  <script type="module">
-    // GitHub repo config - change if needed
+    <script type="module">
     const GITHUB_USER = 'graffjosh';
     const GITHUB_REPO = 'aionWebpage';
     const GITHUB_BRANCH = 'main';
-    const IMAGE_FOLDER = 'images/gallery';
+    const PREVIEW_FOLDER = 'images/previews';
+    const FULLRES_FOLDER = 'images/fullres';
     const IMAGE_EXTS = /\.(jpe?g|png|gif|webp|avif)$/i;
 
     async function fetchRepoTree() {
-      const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/git/trees/${GITHUB_BRANCH}?recursive=1`;
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
-      const json = await res.json();
-      return json.tree || [];
+        const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/git/trees/${GITHUB_BRANCH}?recursive=1`;
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
+        const json = await res.json();
+        return json.tree || [];
     }
 
     async function loadGallery() {
-      const gallery = document.getElementById('gallery');
-      try {
+        const gallery = document.getElementById('gallery');
+        try {
         const tree = await fetchRepoTree();
 
-        const imgs = tree
-          .filter(item =>
-            item.path.startsWith(IMAGE_FOLDER + '/') && IMAGE_EXTS.test(item.path)
-          )
-          .map(item => item.path);
+        const previewImages = tree
+            .filter(item =>
+            item.path.startsWith(PREVIEW_FOLDER + '/') && IMAGE_EXTS.test(item.path)
+            )
+            .map(item => item.path.split('/').pop()) // just the filename
 
-        if (!imgs.length) {
-          gallery.textContent = 'No images found.';
-          return;
+        if (!previewImages.length) {
+            gallery.textContent = 'No images found.';
+            return;
         }
 
         gallery.innerHTML = '';
 
-        imgs.forEach(path => {
-          const img = document.createElement('img');
-          img.src = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${path}`;
-          img.alt = path.split('/').pop().replace(/[-_]/g, ' ').replace(/\.[^/.]+$/, '');
-          img.loading = 'lazy';
-          gallery.appendChild(img);
+        previewImages.forEach(filename => {
+            const previewUrl = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${PREVIEW_FOLDER}/${filename}`;
+            const fullUrl = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${FULLRES_FOLDER}/${filename}`;
+
+            const img = document.createElement('img');
+            img.src = previewUrl;
+            img.dataset.fullres = fullUrl;
+            img.alt = filename.replace(/[-_]/g, ' ').replace(/\.[^/.]+$/, '');
+            img.loading = 'lazy';
+            gallery.appendChild(img);
         });
 
         enableLightbox();
 
-
-      } catch (err) {
+        } catch (err) {
         console.error(err);
         gallery.textContent = 'Failed to load gallery.';
-      }
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', loadGallery);
-    } else {
-      loadGallery();
+        }
     }
 
     function enableLightbox() {
@@ -299,21 +296,27 @@
         const closeBtn = document.querySelector('.lightbox-close');
 
         document.querySelectorAll('.image-gallery img').forEach(img => {
-            img.addEventListener('click', () => {
-            lightboxImg.src = img.src;
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.dataset.fullres;
             lightbox.style.display = 'flex';
-            });
+        });
         });
 
         function closeLightbox() {
-            lightbox.style.display = 'none';
-            lightboxImg.src = '';
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
         }
 
         lightbox.addEventListener('click', closeLightbox);
         closeBtn.addEventListener('click', closeLightbox);
     }
 
-  </script>
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadGallery);
+    } else {
+        loadGallery();
+    }
+    </script>
+
 </body>
 </html>
