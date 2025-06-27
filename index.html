@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="/images/jpg.ico" />
+  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+
   <title>SV Aion – Live Voyage Map</title>
   <meta name="description" content="Track the voyages of SV Aion, a modern sailing vessel exploring the oceans. View live GPS routes, travel logs, and photos." />
 
@@ -226,8 +228,8 @@
     
 
     <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000; cursor:pointer;">
-    <img id="lightbox-img" style="max-width:90vw; max-height:90vh; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.7);" />
-    <span class="lightbox-close" style="position:absolute; top:20px; right:30px; font-size:2rem; color:white;">×</span>
+        <img id="lightbox-img" style="max-width:90vw; max-height:90vh; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.7);" />
+        <span class="lightbox-close" style="position:absolute; top:20px; right:30px; font-size:2rem; color:white;">×</span>
     </div>
 
   </main>
@@ -236,87 +238,128 @@
     © 2025 SV Aion. All rights reserved.
   </footer>
 
-    <script type="module">
-    const GITHUB_USER = 'graffjosh';
-    const GITHUB_REPO = 'aionWebpage';
-    const GITHUB_BRANCH = 'main';
-    const PREVIEW_FOLDER = 'images/gallery/previews';
-    const FULLRES_FOLDER = 'images/gallery/fullres';
-    const IMAGE_EXTS = /\.(jpe?g|png|gif|webp|avif)$/i;
 
-    async function fetchRepoTree() {
-        const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/git/trees/${GITHUB_BRANCH}?recursive=1`;
-        const res = await fetch(url);
-        if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
-        const json = await res.json();
-        return json.tree || [];
+  <script type="module">
+  const GITHUB_USER = 'graffjosh';
+  const GITHUB_REPO = 'aionWebpage';
+  const GITHUB_BRANCH = 'main';
+  const PREVIEW_FOLDER = 'images/gallery/previews';
+  const FULLRES_FOLDER = 'images/gallery/fullres';
+  const IMAGE_EXTS = /\.(jpe?g|png|gif|webp|avif)$/i;
+
+  let previewPaths = [];
+  let fullImagePaths = [];
+  let currentIndex = 0;
+
+  async function fetchRepoTree() {
+    const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/git/trees/${GITHUB_BRANCH}?recursive=1`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
+    const json = await res.json();
+    return json.tree || [];
+  }
+
+  async function loadGallery() {
+    const gallery = document.getElementById('gallery');
+    try {
+      const tree = await fetchRepoTree();
+
+      const previews = tree.filter(
+        item => item.path.startsWith(PREVIEW_FOLDER + '/') && IMAGE_EXTS.test(item.path)
+      );
+
+      if (!previews.length) {
+        gallery.textContent = 'No images found.';
+        return;
+      }
+
+      previews.sort((a, b) => a.path.localeCompare(b.path));
+
+      gallery.innerHTML = '';
+      previewPaths = previews.map(p => `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${p.path}`);
+      fullImagePaths = previews.map(p => {
+        const filename = p.path.split('/').pop();
+        return `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${FULLRES_FOLDER}/${filename}`;
+      });
+
+      previewPaths.forEach((previewSrc, index) => {
+        const img = document.createElement('img');
+        img.src = previewSrc;
+        img.alt = previewSrc.split('/').pop().replace(/[-_]/g, ' ').replace(/\.[^/.]+$/, '');
+        img.loading = 'lazy';
+        img.addEventListener('click', () => openLightbox(index));
+        gallery.appendChild(img);
+      });
+
+      enableLightbox();
+    } catch (err) {
+      console.error(err);
+      gallery.textContent = 'Failed to load gallery.';
     }
+  }
 
-    async function loadGallery() {
-        const gallery = document.getElementById('gallery');
-        try {
-        const tree = await fetchRepoTree();
+  function openLightbox(index) {
+    currentIndex = index;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
 
-        const previewImages = tree
-            .filter(item =>
-            item.path.startsWith(PREVIEW_FOLDER + '/') && IMAGE_EXTS.test(item.path)
-            )
-            .map(item => item.path.split('/').pop()) // just the filename
+    lightboxImg.style.opacity = 0;
+    lightboxImg.onload = () => {
+      lightboxImg.style.opacity = 1;
+    };
+    lightboxImg.src = fullImagePaths[index];
+    lightbox.style.display = 'flex';
+  }
 
-        if (!previewImages.length) {
-            gallery.textContent = 'No images found.';
-            return;
-        }
+  function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+  }
 
-        gallery.innerHTML = '';
+  function showNextImage() {
+    currentIndex = (currentIndex + 1) % fullImagePaths.length;
+    openLightbox(currentIndex);
+  }
 
-        previewImages.forEach(filename => {
-            const previewUrl = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${PREVIEW_FOLDER}/${filename}`;
-            const fullUrl = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${FULLRES_FOLDER}/${filename}`;
+  function showPrevImage() {
+    currentIndex = (currentIndex - 1 + fullImagePaths.length) % fullImagePaths.length;
+    openLightbox(currentIndex);
+  }
 
-            const img = document.createElement('img');
-            img.src = previewUrl;
-            img.dataset.fullres = fullUrl;
-            img.alt = filename.replace(/[-_]/g, ' ').replace(/\.[^/.]+$/, '');
-            img.loading = 'lazy';
-            gallery.appendChild(img);
-        });
+  function enableLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
 
-        enableLightbox();
+    // Only close lightbox if background is clicked (not image)
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) closeLightbox();
+    });
 
-        } catch (err) {
-        console.error(err);
-        gallery.textContent = 'Failed to load gallery.';
-        }
+    closeBtn.addEventListener('click', closeLightbox);
+
+    // Prevent image click from closing lightbox
+    lightboxImg.addEventListener('click', e => {
+      e.stopPropagation();
+    });
+
+    // Enable swipe gestures on the image
+    if (window.Hammer) {
+      const hammer = new Hammer(lightboxImg);
+      hammer.on('swipeleft', () => showNextImage());
+      hammer.on('swiperight', () => showPrevImage());
     }
+  }
 
-    function enableLightbox() {
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const closeBtn = document.querySelector('.lightbox-close');
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadGallery);
+  } else {
+    loadGallery();
+  }
+</script>
 
-        document.querySelectorAll('.image-gallery img').forEach(img => {
-        img.addEventListener('click', () => {
-            lightboxImg.src = img.dataset.fullres;
-            lightbox.style.display = 'flex';
-        });
-        });
-
-        function closeLightbox() {
-        lightbox.style.display = 'none';
-        lightboxImg.src = '';
-        }
-
-        lightbox.addEventListener('click', closeLightbox);
-        closeBtn.addEventListener('click', closeLightbox);
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadGallery);
-    } else {
-        loadGallery();
-    }
-    </script>
 
 </body>
 </html>
