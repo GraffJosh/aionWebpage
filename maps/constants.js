@@ -13,3 +13,4 @@ export const GITHUB_USER = 'graffjosh';
 export const GITHUB_REPO = 'aionWebpage';
 export const GITHUB_BRANCH = 'main';
 export const GPX_DIRECTORY = 'gpxFiles';
+export const WEBPAGE_ROOT_DIRECTORY = 'maps';

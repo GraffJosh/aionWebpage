@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="/images/jpg.ico" />
   <title>SV Aion – Live Voyage Map</title>
   <meta name="description" content="Track the voyages of SV Aion, a modern sailing vessel exploring the oceans. View live GPS routes, travel logs, and photos." />
 
@@ -146,6 +147,40 @@
       transform: scale(1.05);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
     }
+
+    #lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        padding: 1rem;
+        cursor: zoom-out;
+    }
+
+    #lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+    }
+
+    .lightbox-close {
+        position: absolute;
+        top: 1.2rem;
+        right: 1.5rem;
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
   </style>
 </head>
 <body>
@@ -181,7 +216,6 @@
         We're a small crew passionate about adventure, sustainability, and life at sea.
         Our mission is to discover new places, connect with people, and share the magic of sailing.
       </p>
-      <img src="images/aion_crew.jpg" alt="The crew of SV Aion" />
     </section>
 
     <section>
@@ -189,6 +223,13 @@
       <p>Explore highlights from our voyages through this dynamic gallery.</p>
       <div id="gallery" class="image-gallery">Loading…</div>
     </section>
+    
+
+    <div id="lightbox" style="display: none;">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Expanded view" />
+    </div>
+
   </main>
 
   <footer>
@@ -228,6 +269,7 @@
         }
 
         gallery.innerHTML = '';
+
         imgs.forEach(path => {
           const img = document.createElement('img');
           img.src = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${path}`;
@@ -235,6 +277,10 @@
           img.loading = 'lazy';
           gallery.appendChild(img);
         });
+
+        enableLightbox();
+
+
       } catch (err) {
         console.error(err);
         gallery.textContent = 'Failed to load gallery.';
@@ -246,6 +292,28 @@
     } else {
       loadGallery();
     }
+
+    function enableLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.lightbox-close');
+
+        document.querySelectorAll('.image-gallery img').forEach(img => {
+            img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightbox.style.display = 'flex';
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            lightboxImg.src = '';
+        }
+
+        lightbox.addEventListener('click', closeLightbox);
+        closeBtn.addEventListener('click', closeLightbox);
+    }
+
   </script>
 </body>
 </html>
