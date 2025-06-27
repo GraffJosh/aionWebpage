@@ -1,227 +1,251 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>SV Aion</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/x-icon" href="./jpg.ico" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/2.1.2/gpx.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SV Aion – Live Voyage Map</title>
+  <meta name="description" content="Track the voyages of SV Aion, a modern sailing vessel exploring the oceans. View live GPS routes, travel logs, and photos." />
+
+  <!-- Social Previews -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SV Aion – Live Voyage Map" />
+  <meta property="og:description" content="Follow SV Aion's real-time sailing routes across the globe." />
+  <meta property="og:image" content="https://jpg.industries/images/preview.jpg" />
+  <meta property="og:url" content="https://jpg.industries/" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SV Aion – Live Voyage Map" />
+  <meta name="twitter:description" content="Explore the live GPS voyage map of SV Aion." />
+  <meta name="twitter:image" content="https://jpg.industries/images/preview.jpg" />
+
+  <!-- Fonts & Styling -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
-    html, body { height: 100%; margin: 0; }
-    #map {height: 100%;width: 100%;}
-        
-    #trackPanel {
-        position: absolute;
-        top: 100px;
-        left: 10px;
-        z-index: 1000;
-        font-family: sans-serif;
+    :root {
+      --accent: #0077aa;
+      --bg: #d0dde7;
+      --text: #333;
+      --heading: #002b36;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
-    /* Style the button */
-    #toggleTrackList {
-        width: 100%;
-        background: #ffffffee;
-        border: none;
-        padding: 8px 12px;
-        font-size: 16px;
-        border-radius: 8px 8px 0 0;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-        cursor: pointer;
+    * {
+      box-sizing: border-box;
     }
 
-    /* Style the collapsible list */
-    #trackList {
-        max-height: 40vh;
-        overflow-y: auto;
-        background: rgba(255, 255, 255, 0.75);
-        border-radius: 0 0 10px 10px;
-        padding: 10px;
-        font-size: 14px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-        display: block;
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
     }
 
-    @media (min-width: 125px) {
-      #trackList {
-        left: 10px;
-        right: auto;
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
       }
     }
-    #trackList.hidden {
-        display: none;
-    }
-    
-    #trackControls {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 8px;
-    }
-    #trackControls button {
-        flex: 1;
-        margin: 0 2px;
-        padding: 4px 8px;
-        font-size: 13px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        cursor: pointer;
+
+    header {
+      background: linear-gradient(to right, #004466, #0077aa);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem 2rem;
     }
 
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
 
-    .track-item {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        margin: 4px 0;
-        cursor: pointer;
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
     }
-    .track-item input[type="checkbox"],
-    .folder-checkbox {
-        transform: scale(1.4);
-        margin-right: 6px;
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
     }
-    @media (max-width: 600px) {
-      .track-item input[type="checkbox"],
-      .folder-checkbox {
-        transform: scale(1.8);
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: var(--heading);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    img,
+    iframe {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    iframe {
+      min-height: 450px;
+      height: 70vh;
+      width: 100%;
+      border: none;
+    }
+
+    img:hover {
+      transform: scale(1.01);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      padding: 2rem 1rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      iframe {
+        min-height: 300px;
+        height: 60vh;
       }
     }
-    @media (min-width: 1200px) {
-      .track-item input[type="checkbox"],
-      .folder-checkbox {
-        transform: scale(1.2);
-      }
-    }
-    .track-folder {
-        margin-bottom: 10px;
-    }
-    .folder {
-        margin-bottom: 8px;
-        border-radius: 8px;
-        overflow: hidden;
-        background: #f9f9f9;
-        border: 1px solid #ddd;
+
+    /* Gallery Styles */
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
     }
 
-    .folder-header {
-        display: flex;
-        align-items: center;
-        padding: 6px 10px;
-        background: #f0f0f0;
-        cursor: pointer;
-        font-weight: bold;
-        gap: 6px;
+    .image-gallery img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
 
-    .folder-label {
-        flex: 1;
+    .image-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
     }
-
-    .folder-checkbox {
-        margin-left: auto;
-    }
-
-    .toggle-icon {
-        width: 16px;
-        text-align: center;
-    }
-
-    .sublist {
-        display: none;
-        padding: 6px 10px;
-        border-top: 1px solid #ddd;
-        background: #ffffff;
-    }
-
-    .sublist.expanded {
-        display: block;
-    }
-
-    .folder-toggle {
-        background: #f0f0f0;
-        border: none;
-        padding: 5px 8px;
-        font-weight: bold;
-        cursor: pointer;
-        width: 100%;
-        text-align: left;
-        border-radius: 5px;
-    }
-
-    .folder-files {
-        padding-left: 10px;
-    }
-    .track-info-bubble {
-        position: absolute;
-        right: -130px; /* adjust as needed */
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0,0,0,0.75);
-        color: white;
-        padding: 3px 7px;
-        border-radius: 5px;
-        font-size: 0.75rem;
-        white-space: nowrap;
-        pointer-events: none;
-        user-select: none;
-    }
-    .folder-header .info-bubble {
-        margin-left: auto;
-        background: #ddd;
-        padding: 2px 6px;
-        border-radius: 4px;
-        font-size: 0.75rem;
-        color: #333;
-    }
-
-    /* styles.css or your main CSS file */
-    .track-item {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .info-bubble {
-        background-color: #eee;
-        border-radius: 12px;
-        padding: 2px 8px;
-        font-size: 0.8rem;
-        color: #333;
-        user-select: none;
-        white-space: nowrap;
-    }
-    .track-info-label {
-        background: rgba(0,0,0,0.7);
-        color: white;
-        padding: 2px 6px;
-        border-radius: 6px;
-        font-size: 12px;
-        white-space: nowrap;
-        pointer-events: none;
-    }
-
-
   </style>
 </head>
 <body>
-    <div id="trackPanel">
-        <button id="toggleTrackList">☰ Tracks</button>
-        <div id="trackList">
-            
-            <div id="trackControls">
-                <button id="selectAll">Select All</button>
-                <button id="clearAll">Clear All</button>
-            </div>
-            <div id="trackCheckboxes"><i>Loading GPX files...</i></div>
-        </div>
 
-    </div>
+  <header>
+    <h1>SV Aion</h1>
+    <p>Exploring the oceans — live from our deck to your screen</p>
+  </header>
 
-  <div id="map"></div>
-<script type="module" src="./mainscript.js"></script>
+  <main>
+    <section>
+      <h2>Welcome Aboard</h2>
+      <p>
+        SV Aion is a modern sailing vessel on a journey across the seas. This page shares our story
+        through real-time GPS tracks, stunning photography, and detailed sailing logs.
+      </p>
+      <p>
+        Whether you're a fellow sailor, a curious traveler, or a friend back home —
+        we invite you to follow along and explore our voyage.
+      </p>
+      <img src="images/aion_at_anchor.jpg" alt="SV Aion sailing under clear skies" />
+    </section>
 
+    <section>
+      <h2>Live Voyage Map</h2>
+      <p>Below is an interactive map showing our latest sailing routes and anchorages.</p>
+      <iframe src="/maps" title="SV Aion Live Map" loading="lazy" allowfullscreen></iframe>
+    </section>
+
+    <section>
+      <h2>Meet the Crew</h2>
+      <p>
+        We're a small crew passionate about adventure, sustainability, and life at sea.
+        Our mission is to discover new places, connect with people, and share the magic of sailing.
+      </p>
+      <img src="images/aion_crew.jpg" alt="The crew of SV Aion" />
+    </section>
+
+    <section>
+      <h2>Photo Gallery</h2>
+      <p>Explore highlights from our voyages through this dynamic gallery.</p>
+      <div id="gallery" class="image-gallery">Loading…</div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 SV Aion. All rights reserved.
+  </footer>
+
+  <script type="module">
+    // GitHub repo config - change if needed
+    const GITHUB_USER = 'graffjosh';
+    const GITHUB_REPO = 'aionWebpage';
+    const GITHUB_BRANCH = 'main';
+    const IMAGE_FOLDER = 'images/gallery';
+    const IMAGE_EXTS = /\.(jpe?g|png|gif|webp|avif)$/i;
+
+    async function fetchRepoTree() {
+      const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/git/trees/${GITHUB_BRANCH}?recursive=1`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
+      const json = await res.json();
+      return json.tree || [];
+    }
+
+    async function loadGallery() {
+      const gallery = document.getElementById('gallery');
+      try {
+        const tree = await fetchRepoTree();
+
+        const imgs = tree
+          .filter(item =>
+            item.path.startsWith(IMAGE_FOLDER + '/') && IMAGE_EXTS.test(item.path)
+          )
+          .map(item => item.path);
+
+        if (!imgs.length) {
+          gallery.textContent = 'No images found.';
+          return;
+        }
+
+        gallery.innerHTML = '';
+        imgs.forEach(path => {
+          const img = document.createElement('img');
+          img.src = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${path}`;
+          img.alt = path.split('/').pop().replace(/[-_]/g, ' ').replace(/\.[^/.]+$/, '');
+          img.loading = 'lazy';
+          gallery.appendChild(img);
+        });
+      } catch (err) {
+        console.error(err);
+        gallery.textContent = 'Failed to load gallery.';
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadGallery);
+    } else {
+      loadGallery();
+    }
+  </script>
 </body>
 </html>
