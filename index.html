@@ -328,31 +328,36 @@
     currentIndex = (currentIndex - 1 + fullImagePaths.length) % fullImagePaths.length;
     openLightbox(currentIndex);
   }
-
     function enableLightbox() {
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const closeBtn = document.querySelector('.lightbox-close');
 
-        // Close on background click
+        // Close when clicking the background only
         lightbox.addEventListener('click', e => {
             if (e.target === lightbox) closeLightbox();
         });
 
         closeBtn.addEventListener('click', closeLightbox);
 
-        // Prevent image click from closing lightbox
+        // Prevent image click from closing
         lightboxImg.addEventListener('click', e => e.stopPropagation());
 
-        // Swipe support
+        // ✅ Swipe support on entire lightbox (not just the image)
         if (window.Hammer) {
-            const hammer = new Hammer(lightbox);
+            const hammer = new Hammer(lightbox); // bind to full overlay
             hammer.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
-            hammer.on('swipeleft', () => showNextImage());
-            hammer.on('swiperight', () => showPrevImage());
+
+            hammer.on('swipeleft', () => {
+            showNextImage();
+            });
+
+            hammer.on('swiperight', () => {
+            showPrevImage();
+            });
         }
 
-        // Keyboard support
+        // ✅ Keyboard navigation
         document.addEventListener('keydown', e => {
             if (lightbox.style.display !== 'flex') return;
 
