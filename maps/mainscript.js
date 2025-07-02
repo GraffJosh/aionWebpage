@@ -67,21 +67,35 @@ fetchGpxTree().then(async tree => {
   const params = new URLSearchParams(window.location.search);
 
   // === Select tracks from ?tracks= ===
-  const trackList = params.get('tracks');
-  if (trackList) {
-    const filenames = trackList.split(',').map(decodeURIComponent);
-    filenames.forEach(filename => {
-      const selector = `input[type="checkbox"][value="${CSS.escape(filename)}"]`;
-      const checkbox = trackCheckboxesDiv.querySelector(selector);
-      if (checkbox) {
-        checkbox.checked = true;
-        checkbox.dispatchEvent(new Event('change'));
-      } else {
-        console.warn(`⚠️ Track not found: ${filename}`);
-      }
-    });
-  }
+const trackList = params.get('tracks');
 
+
+if (trackList === 'latest') {
+  const filename = await findMostRecentTrack(tree);
+  console.warn(`⚠️ most recent file: ${filename}`);
+  if (filename) {
+    const selector = `input[type="checkbox"][value="${CSS.escape(filename)}"]`;
+    const checkbox = trackCheckboxesDiv.querySelector(selector);
+    if (checkbox) {
+      checkbox.checked = true;
+      checkbox.dispatchEvent(new Event('change'));
+    } else {
+      console.warn(`⚠️ Track not found: ${filename}`);
+    }
+  }
+} else if (trackList) {
+  const filenames = trackList.split(',').map(decodeURIComponent);
+  filenames.forEach(filename => {
+    const selector = `input[type="checkbox"][value="${CSS.escape(filename)}"]`;
+    const checkbox = trackCheckboxesDiv.querySelector(selector);
+    if (checkbox) {
+      checkbox.checked = true;
+      checkbox.dispatchEvent(new Event('change'));
+    } else {
+      console.warn(`⚠️ Track not found: ${filename}`);
+    }
+  });
+}
   // === Select folders from ?folders= ===
   const folderList = params.get('folders');
   if (folderList) {

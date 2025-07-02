@@ -163,6 +163,8 @@
         z-index: 1000;
         padding: 1rem;
         cursor: zoom-out;
+        touch-action: pan-y; /* Allow horizontal swipe gestures */
+
     }
 
     #lightbox img {
@@ -209,7 +211,7 @@
     <section>
       <h2>Live Voyage Map</h2>
       <p>Below is an interactive map showing our latest sailing routes and anchorages.</p>
-      <iframe src="/maps" title="SV Aion Live Map" loading="lazy" allowfullscreen></iframe>
+      <iframe src="/maps?tracks=latest" title="SV Aion Live Map" loading="lazy" allowfullscreen></iframe>
     </section>
 
     <section>
@@ -328,52 +330,48 @@
     currentIndex = (currentIndex - 1 + fullImagePaths.length) % fullImagePaths.length;
     openLightbox(currentIndex);
   }
-    function enableLightbox() {
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const closeBtn = document.querySelector('.lightbox-close');
+  
+  function enableLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
 
-        // Close when clicking the background only
-        lightbox.addEventListener('click', e => {
-            if (e.target === lightbox) closeLightbox();
-        });
+  // Close on background click
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
+  });
 
-        closeBtn.addEventListener('click', closeLightbox);
+  closeBtn.addEventListener('click', closeLightbox);
 
-        // Prevent image click from closing
-        lightboxImg.addEventListener('click', e => e.stopPropagation());
+  // Prevent closing when clicking image
+  lightboxImg.addEventListener('click', e => e.stopPropagation());
 
-        // ✅ Swipe support on entire lightbox (not just the image)
-        if (window.Hammer) {
-            const hammer = new Hammer(lightbox); // bind to full overlay
-            hammer.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
+  // Enable keyboard navigation
+  document.addEventListener('keydown', e => {
+    if (lightbox.style.display !== 'flex') return;
+    if (e.key === 'ArrowRight') showNextImage();
+    else if (e.key === 'ArrowLeft') showPrevImage();
+    else if (e.key === 'Escape') closeLightbox();
+  });
 
-            hammer.on('swipeleft', () => {
-            showNextImage();
-            });
+  // ✅ SWIPE SETUP: Hammer on #lightbox
+  if (window.Hammer) {
+    const hammer = new Hammer(lightbox);
+    hammer.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
 
-            hammer.on('swiperight', () => {
-            showPrevImage();
-            });
-        }
+    hammer.on('swipeleft', () => {
+      showNextImage();
+    });
 
-        // ✅ Keyboard navigation
-        document.addEventListener('keydown', e => {
-            if (lightbox.style.display !== 'flex') return;
+    hammer.on('swiperight', () => {
+      showPrevImage();
+    });
 
-            switch (e.key) {
-            case 'ArrowRight':
-                showNextImage();
-                break;
-            case 'ArrowLeft':
-                showPrevImage();
-                break;
-            case 'Escape':
-                closeLightbox();
-                break;
-            }
-        });
-    }
+    console.log('Hammer.js swipe initialized on #lightbox');
+  } else {
+    console.warn('Hammer.js not loaded or unavailable');
+  }
+}
 
 
 

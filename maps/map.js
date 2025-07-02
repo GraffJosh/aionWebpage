@@ -119,21 +119,36 @@ export function resetViewToFallback() {
         map.setView(fallbackView.center, fallbackView.zoom);
     }
 }
-
 function fitMapToAllTracks() {
-    const layers = Object.values(loadedTracks);
-    if (layers.length === 0) return;
+  const layers = Object.values(loadedTracks);
+  if (layers.length === 0) return;
 
-    let combinedBounds = null;
-    layers.forEach(layer => {
-        const bounds = layer.getBounds();
-        combinedBounds = combinedBounds ? combinedBounds.extend(bounds) : bounds;
-    });
-
+  let combinedBounds = null;
+  layers.forEach(layer => {
+    const bounds = layer.getBounds();
+    combinedBounds = combinedBounds ? combinedBounds.extend(bounds) : bounds;
+  });
+  
+  console.log('Fitting bounds:', combinedBounds);
     if (combinedBounds) {
-        map.fitBounds(combinedBounds, { padding: [20, 20] });
+        // Fit normally, animate it
+        map.fitBounds(combinedBounds, {
+            padding: [20, 20],
+            animate: true
+        });
+
+        const currentZoom = map.getZoom();
+        console.log('Zoom after fitBounds:', currentZoom);
+        const minZoom = 15
+        if (currentZoom > minZoom) {
+            console.log('Forcing zoom to ', minZoom);
+            map.setZoom(minZoom);
+        }
+
     }
 }
+
+
 
 function colorTrackByFile(gpxLayer, filename) {
     const key = filename.split('/').pop();
