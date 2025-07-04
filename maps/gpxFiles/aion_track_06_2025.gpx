@@ -6,5 +6,103 @@
         <time>2025-06-25T11:55:21.325</time>
       </trkpt>
     </trkseg>
+    <trkseg>
+      <trkpt lat="39.27945733333333" lon="-76.5846433">
+        <time>2025-06-25T14:44:39.573</time>
+      </trkpt>
+      <trkpt lat="39.279554616666665" lon="-76.58469655">
+        <time>2025-06-25T14:44:39.687</time>
+      </trkpt>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.27954186666667" lon="-76.58469263333333">
+        <time>2025-06-25T16:07:11.583</time>
+      </trkpt>
+      <trkpt lat="39.279656333333335" lon="-76.58473405">
+        <time>2025-06-25T17:14:51.356</time>
+      </trkpt>
+      <trkpt lat="39.279542283333335" lon="-76.58465303333334">
+        <time>2025-06-25T17:17:39.343</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <trkseg>
+      <trkpt lat="39.27954866666666" lon="-76.58469875">
+        <time>2025-06-26T03:01:02.681</time>
+      </trkpt>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.27955848333333" lon="-76.58469026666667">
+        <time>2025-06-26T09:18:00.487</time>
+      </trkpt>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.27954258333333" lon="-76.58469031666667">
+        <time>2025-06-26T17:48:36.605</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <trkseg>
+      <trkpt lat="39.279601066666665" lon="-76.58468671666667">
+        <time>2025-06-27T00:53:58.365</time>
+      </trkpt>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.27957443333333" lon="-76.58470653333333">
+        <time>2025-06-27T03:01:04.984</time>
+      </trkpt>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.279591616666664" lon="-76.5846885">
+        <time>2025-06-27T14:37:06.544</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <trkseg>
+      <trkpt lat="39.27957155" lon="-76.58469345">
+        <time>2025-06-28T02:15:33.362</time>
+      </trkpt>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.279587633333335" lon="-76.58469388333333">
+        <time>2025-06-28T03:01:01.495</time>
+      </trkpt>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.27958413333333" lon="-76.58469108333334">
+        <time>2025-06-28T11:17:01.432</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <trkseg>
+      <trkpt lat="39.27958578333333" lon="-76.58470978333334">
+        <time>2025-06-29T03:02:17.432</time>
+      </trkpt>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.279549216666666" lon="-76.58469891666667">
+        <time>2025-06-29T12:01:24.377</time>
+      </trkpt>
+      <trkpt lat="39.279650133333334" lon="-76.58472243333334">
+        <time>2025-06-29T14:28:13.337</time>
+      </trkpt>
+      <trkpt lat="39.2795492" lon="-76.5846883">
+        <time>2025-06-29T15:15:02.479</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <trkseg>
+      <trkpt lat="39.27963543333333" lon="-76.5847587">
+        <time>2025-06-30T12:06:37.251</time>
+      </trkpt>
+      <trkpt lat="39.279545666666664" lon="-76.58468735">
+        <time>2025-06-30T12:31:51.653</time>
+      </trkpt>
+    </trkseg>
   </trk>
 </gpx>
