@@ -39,43 +39,59 @@ L.tileLayer('http://tiles.openseamap.org/seamark/{z}/{x}/{y}.png', {
 }).addTo(map);
 console.log('L.GPX:', L.GPX);
 
-
-function addTrackToMap(filename) {
-
+async function addTrackToMap(filename) {
     const gpxLayer = new L.GPX(filename, {
         async: true,
         marker_options: { startIconUrl: null, endIconUrl: null }
     });
+
     gpxLayer.on('loaded', async () => {
-        fitMapToAllTracks();
-        colorTrackByFile(gpxLayer, filename);
+        const subtracks = gpxLayer.getLayers(); // Each <trk> is a layer now
 
-        try {
-            const info = await getGpxInfo(filename);
-            const summary = formatDurationDistance(info.durationSeconds, info.distanceMeters);
-
-            const markerPoint = findEndPoint(gpxLayer);
-
-            if (markerPoint) {
-                const infoIcon = L.divIcon({
-                    className: 'track-info-label',
-                    html: summary,
-                    iconSize: null
-                });
-
-                const label = L.marker(markerPoint, { icon: infoIcon, interactive: false });
-                label.addTo(map);
-                gpxLayer._infoLabel = label;
-            } else {
-                console.warn('No start point found for:', filename);
-            }
-        } catch (e) {
-            console.error('Failed to add label for', filename, e);
+        if (!subtracks.length) {
+            console.warn('No subtracks found in GPX layer for', filename);
+            return;
         }
+
+        // Color and label each subtrack individually
+        for (let i = 0; i < subtracks.length; i++) {
+            const subLayer = subtracks[i];
+            const trackId = `${filename}::trk${i}`; // Unique ID for coloring & tracking
+            colorTrackByFile(subLayer, trackId);
+
+            try {
+                const info = await getGpxInfo(filename, i); // support index for per-trk
+                const summary = formatDurationDistance(info.durationSeconds, info.distanceMeters);
+                const markerPoint = findEndPoint(subLayer);
+
+                if (markerPoint) {
+                    const infoIcon = L.divIcon({
+                        className: 'track-info-label',
+                        html: summary,
+                        iconSize: null
+                    });
+
+                    const label = L.marker(markerPoint, { icon: infoIcon, interactive: false });
+                    label.addTo(map);
+
+                    // Attach label to this subLayer so we can remove it later
+                    subLayer._infoLabel = label;
+                } else {
+                    console.warn('No end point found for subtrack:', trackId);
+                }
+            } catch (e) {
+                console.error('Failed to get label for subtrack', trackId, e);
+            }
+
+            // Add subtrack to map
+            subLayer.addTo(map);
+        }
+
+        loadedTracks[filename] = gpxLayer;
+        fitMapToAllTracks();
     });
 
-    gpxLayer.addTo(map);
-    loadedTracks[filename] = gpxLayer;
+    gpxLayer.addTo(map); // still needed to kick off the loading process
 }
 
 
@@ -139,30 +155,44 @@ function fitMapToAllTracks() {
 
         const currentZoom = map.getZoom();
         console.log('Zoom after fitBounds:', currentZoom);
-        const minZoom = 15
-        if (currentZoom > minZoom) {
-            console.log('Forcing zoom to ', minZoom);
-            map.setZoom(minZoom);
-        }
 
+        const minZoom = 15
+        
+        setTimeout(() => {
+            const currentZoom = map.getZoom();
+            if (currentZoom > minZoom) {
+                map.setZoom(minZoom);
+            }
+        }, 250);
     }
 }
 
 
 
-function colorTrackByFile(gpxLayer, filename) {
-    const key = filename.split('/').pop();
-    if (!globalColorMap[key]) {
-        globalColorMap[key] = globalColorPalette[globalColorIndex.value % globalColorPalette.length];
-        globalColorIndex.value++;
-    }
-    const color = globalColorMap[key];
-    const gpxElement = gpxLayer.getLayers()[0];
-    if (!gpxElement) return;
+const fileColorMap = {};
+const COLORS = [
+  '#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231',
+  '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe',
+  '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000',
+  '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080'
+];
+let colorIndex = 0;
+function generateNextColor() {
+  const color = COLORS[colorIndex % COLORS.length];
+  colorIndex++;
+  return color;
+}
 
-    gpxElement.eachLayer(layer => {
+function colorTrackByFile(trackLayer, id) {
+    if (!fileColorMap[id]) {
+        fileColorMap[id] = generateNextColor();
+    }
+    const color = fileColorMap[id];
+
+    // Apply color to each polyline in the layer
+    trackLayer.eachLayer(layer => {
         if (layer.setStyle) {
-            layer.setStyle({ color, weight: 4 });
+            layer.setStyle({ color });
         }
     });
 }
