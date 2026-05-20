@@ -593,12 +593,12 @@ function buildPointMetadataContent(point) {
     mode.textContent = metadataDisplayMode === 'compact' ? 'Mode: Compact' : 'Mode: Expanded';
     container.appendChild(mode);
 
-    if (point.elevation !== null) {
-        const elevation = document.createElement('div');
-        elevation.className = 'point-metadata-subtitle';
-        elevation.textContent = `Elevation: ${formatMetadataValue(point.elevation)} m`;
-        container.appendChild(elevation);
-    }
+    // if (point.elevation !== null) {
+    //     const elevation = document.createElement('div');
+    //     elevation.className = 'point-metadata-subtitle';
+    //     elevation.textContent = `Elevation: ${formatMetadataValue(point.elevation)} m`;
+    //     container.appendChild(elevation);
+    // }
 
     const visibleEntries = metadataDisplayMode === 'compact'
         ? point.metadataEntries.slice(0, COMPACT_METADATA_ROW_LIMIT)
@@ -621,7 +621,7 @@ function buildPointMetadataContent(point) {
         type.className = 'point-metadata-type';
         type.textContent = entry.type || '';
 
-        row.append(label, value, type);
+        row.append(label, value);//, type);
         container.appendChild(row);
     });
 
