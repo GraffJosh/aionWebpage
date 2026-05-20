@@ -102,21 +102,19 @@ function removeTrackFromMap(filename) {
         return;
     }
 
-    // Remove info label
-    if (gpxLayer._infoLabel) {
-        map.removeLayer(gpxLayer._infoLabel);
-    }
 
     // Remove all child layers explicitly
     const childLayers = gpxLayer.getLayers();
     if (childLayers && childLayers.length) {
         childLayers.forEach(layer => {
+            if (layer._infoLabel && map.hasLayer(layer._infoLabel)) {
+                map.removeLayer(layer._infoLabel);
+            }
             if (map.hasLayer(layer)) {
                 map.removeLayer(layer);
             }
         });
     }
-
     // Remove parent gpxLayer if needed
     if (map.hasLayer(gpxLayer)) {
         map.removeLayer(gpxLayer);
