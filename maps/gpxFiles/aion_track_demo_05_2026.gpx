@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Aion Metadata Demo">
+  <metadata>
+    <name>Aion Metadata Hover Demo</name>
+    <time>2026-05-20T14:00:00Z</time>
+  </metadata>
+  <trk>
+    <name>Aion Metadata Hover Demo 05/2026</name>
+    <desc>Demo track with per-point JSON metadata in desc fields.</desc>
+    <trkseg>
+      <trkpt lat="39.27955" lon="-76.58470">
+        <ele>2.1</ele>
+        <time>2026-05-20T14:00:00Z</time>
+        <desc>{"boatSpeed":{"value":4.8,"unit":"kn","type":"speed"},"windSpeed":{"value":11.6,"unit":"kn","type":"speed"},"windAngle":{"value":34,"unit":"deg","type":"angle"},"trueHeading":{"value":112,"unit":"deg","type":"angle"},"heel":{"value":8.2,"unit":"deg","type":"angle"}}</desc>
+      </trkpt>
+      <trkpt lat="39.27966" lon="-76.58452">
+        <ele>2.0</ele>
+        <time>2026-05-20T14:01:00Z</time>
+        <desc>{"boatSpeed":{"value":5.1,"unit":"kn","type":"speed"},"windSpeed":{"value":12.2,"unit":"kn","type":"speed"},"windAngle":{"value":39,"unit":"deg","type":"angle"},"trueWindDirection":{"value":158,"unit":"deg","type":"angle"},"autopilotMode":"wind"}</desc>
+      </trkpt>
+      <trkpt lat="39.27982" lon="-76.58436">
+        <ele>2.3</ele>
+        <time>2026-05-20T14:02:00Z</time>
+        <desc>{"boatSpeed":{"value":5.4,"unit":"kn","type":"speed"},"windSpeed":{"value":13.0,"unit":"kn","type":"speed"},"windAngle":{"value":42,"unit":"deg","type":"angle"},"courseOverGround":{"value":119.3,"unit":"deg","type":"angle"},"performance":{"vmg":{"value":4.0,"unit":"kn","type":"speed"},"targetVmg":{"value":4.4,"unit":"kn","type":"speed"}}}</desc>
+      </trkpt>
+      <trkpt lat="39.28002" lon="-76.58428">
+        <ele>2.4</ele>
+        <time>2026-05-20T14:03:00Z</time>
+        <desc>{"boatSpeed":{"value":5.6,"unit":"kn","type":"speed"},"windSpeed":{"value":14.1,"unit":"kn","type":"speed"},"windAngle":{"value":46,"unit":"deg","type":"angle"},"rudderAngle":{"value":-2.1,"unit":"deg","type":"angle"},"tack":"starboard"}</desc>
+      </trkpt>
+      <trkpt lat="39.28025" lon="-76.58433">
+        <ele>2.5</ele>
+        <time>2026-05-20T14:04:00Z</time>
+        <desc>{"boatSpeed":{"value":5.8,"unit":"kn","type":"speed"},"windSpeed":{"value":14.8,"unit":"kn","type":"speed"},"windAngle":{"value":51,"unit":"deg","type":"angle"},"waterTemp":{"value":18.4,"unit":"C","type":"temperature"},"depth":{"value":7.2,"unit":"m","type":"distance"}}</desc>
+      </trkpt>
+      <trkpt lat="39.28047" lon="-76.58446">
+        <ele>2.4</ele>
+        <time>2026-05-20T14:05:00Z</time>
+        <desc>{"boatSpeed":{"value":6.0,"unit":"kn","type":"speed"},"windSpeed":{"value":15.1,"unit":"kn","type":"speed"},"windAngle":{"value":56,"unit":"deg","type":"angle"},"trueHeading":{"value":126,"unit":"deg","type":"angle"},"heel":{"value":13.6,"unit":"deg","type":"angle"},"reef":"none"}</desc>
+      </trkpt>
+      <trkpt lat="39.28063" lon="-76.58466">
+        <ele>2.3</ele>
+        <time>2026-05-20T14:06:00Z</time>
+        <desc>{"boatSpeed":{"value":5.7,"unit":"kn","type":"speed"},"windSpeed":{"value":13.9,"unit":"kn","type":"speed"},"windAngle":{"value":49,"unit":"deg","type":"angle"},"performance":{"polarRatio":{"value":0.91,"unit":"ratio","type":"performance"}}}</desc>
+      </trkpt>
+      <trkpt lat="39.28068" lon="-76.58490">
+        <ele>2.1</ele>
+        <time>2026-05-20T14:07:00Z</time>
+        <desc>{"boatSpeed":{"value":5.3,"unit":"kn","type":"speed"},"windSpeed":{"value":12.9,"unit":"kn","type":"speed"},"windAngle":{"value":43,"unit":"deg","type":"angle"},"courseOverGround":{"value":132.5,"unit":"deg","type":"angle"},"watchkeeper":"Josh"}</desc>
+      </trkpt>
+      <trkpt lat="39.28057" lon="-76.58511">
+        <ele>1.9</ele>
+        <time>2026-05-20T14:08:00Z</time>
+        <desc>{"boatSpeed":{"value":5.0,"unit":"kn","type":"speed"},"windSpeed":{"value":12.0,"unit":"kn","type":"speed"},"windAngle":{"value":38,"unit":"deg","type":"angle"},"trueHeading":{"value":140,"unit":"deg","type":"angle"},"batteryPercent":{"value":87,"unit":"%","type":"percent"}}</desc>
+      </trkpt>
+      <trkpt lat="39.28037" lon="-76.58525">
+        <ele>1.8</ele>
+        <time>2026-05-20T14:09:00Z</time>
+        <desc>{"boatSpeed":{"value":4.7,"unit":"kn","type":"speed"},"windSpeed":{"value":11.3,"unit":"kn","type":"speed"},"windAngle":{"value":33,"unit":"deg","type":"angle"},"engineRpm":{"value":0,"unit":"rpm","type":"rpm"},"notes":"Light chop"}</desc>
+      </trkpt>
+      <trkpt lat="39.28014" lon="-76.58524">
+        <ele>1.9</ele>
+        <time>2026-05-20T14:10:00Z</time>
+        <desc>{"boatSpeed":{"value":4.4,"unit":"kn","type":"speed"},"windSpeed":{"value":10.4,"unit":"kn","type":"speed"},"windAngle":{"value":29,"unit":"deg","type":"angle"},"current":{"set":{"value":201,"unit":"deg","type":"angle"},"drift":{"value":0.6,"unit":"kn","type":"speed"}}}</desc>
+      </trkpt>
+      <trkpt lat="39.27990" lon="-76.58515">
+        <ele>2.0</ele>
+        <time>2026-05-20T14:11:00Z</time>
+        <desc>{"boatSpeed":{"value":4.2,"unit":"kn","type":"speed"},"windSpeed":{"value":9.8,"unit":"kn","type":"speed"},"windAngle":{"value":26,"unit":"deg","type":"angle"},"trueHeading":{"value":158,"unit":"deg","type":"angle"},"status":"demo_complete"}</desc>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

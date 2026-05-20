@@ -36,8 +36,7 @@ export function updateUrlParams() {
       .filter(Boolean);
 
     if (checkedFolders.length > 0) {
-      const encodedFolders = checkedFolders.map(encodeURIComponent).join(',');
-      params.set('folders', encodedFolders);
+      params.set('folders', checkedFolders.join(','));
     } else {
       params.delete('folders');
     }
@@ -51,8 +50,7 @@ export function updateUrlParams() {
       .map(cb => cb.value);
 
     if (checkedTracks.length > 0) {
-      const encodedTracks = checkedTracks.map(encodeURIComponent).join(',');
-      params.set('tracks', encodedTracks);
+      params.set('tracks', checkedTracks.join(','));
     } else {
       params.delete('tracks');
     }
@@ -61,7 +59,8 @@ export function updateUrlParams() {
     params.delete('folders');
   }
 
-  const newUrl = `${window.location.pathname}?${params.toString()}`;
+  const queryString = params.toString();
+  const newUrl = queryString ? `${window.location.pathname}?${queryString}` : window.location.pathname;
   history.replaceState(null, '', newUrl);
 }
 

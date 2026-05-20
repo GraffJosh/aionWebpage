@@ -212,6 +212,87 @@
   pointer-events: none;
 }
 
+.point-metadata-tooltip {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+.point-metadata-tooltip:before {
+  display: none;
+}
+.point-metadata-tooltip-content {
+  min-width: 220px;
+  max-width: 320px;
+  max-height: 260px;
+  overflow-y: auto;
+  background: rgba(14, 24, 36, 0.96);
+  color: #f4f8fc;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+  padding: 10px 12px;
+}
+.point-metadata-title {
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.point-metadata-mode {
+  font-size: 10px;
+  color: rgba(244, 248, 252, 0.72);
+  margin-bottom: 6px;
+}
+.point-metadata-subtitle {
+  font-size: 11px;
+  color: rgba(244, 248, 252, 0.75);
+  margin-bottom: 8px;
+}
+.point-metadata-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 8px;
+  align-items: baseline;
+  padding: 2px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.point-metadata-row:first-of-type {
+  border-top: none;
+}
+.point-metadata-label {
+  font-size: 11px;
+  color: rgba(244, 248, 252, 0.82);
+}
+.point-metadata-value {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+}
+.point-metadata-type {
+  font-size: 10px;
+  color: rgba(244, 248, 252, 0.7);
+  text-transform: lowercase;
+}
+.point-metadata-more {
+  margin-top: 6px;
+  font-size: 10px;
+  color: rgba(244, 248, 252, 0.75);
+}
+.metadata-mode-control {
+  margin-top: 88px !important;
+}
+.metadata-mode-button {
+  background: rgba(255, 255, 255, 0.94);
+  color: #1f2937;
+  border: none;
+  padding: 6px 10px;
+  font-size: 12px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+.metadata-mode-button:hover {
+  background: #ffffff;
+}
+
   </style>
 </head>
 <body>

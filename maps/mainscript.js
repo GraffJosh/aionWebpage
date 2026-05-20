@@ -74,7 +74,7 @@ if (trackList === 'latest') {
   const filename = await findMostRecentTrack(tree);
   console.warn(`⚠️ most recent file: ${filename}`);
   if (filename) {
-    const selector = `input[type="checkbox"][value="${CSS.escape(filename)}"]`;
+    const selector = `input[type="checkbox"][value="${escapeCSSSelector(filename)}"]`;
     const checkbox = trackCheckboxesDiv.querySelector(selector);
     if (checkbox) {
       checkbox.checked = true;
@@ -84,9 +84,9 @@ if (trackList === 'latest') {
     }
   }
 } else if (trackList) {
-  const filenames = trackList.split(',').map(decodeURIComponent);
+  const filenames = trackList.split(',');
   filenames.forEach(filename => {
-    const selector = `input[type="checkbox"][value="${CSS.escape(filename)}"]`;
+    const selector = `input[type="checkbox"][value="${escapeCSSSelector(filename)}"]`;
     const checkbox = trackCheckboxesDiv.querySelector(selector);
     if (checkbox) {
       checkbox.checked = true;
@@ -99,7 +99,7 @@ if (trackList === 'latest') {
   // === Select folders from ?folders= ===
   const folderList = params.get('folders');
   if (folderList) {
-    const folderNames = folderList.split(',').map(decodeURIComponent);
+    const folderNames = folderList.split(',');
     folderNames.forEach(folderName => {
       const folderHeader = [...trackCheckboxesDiv.querySelectorAll('.folder-header')]
         .find(el => el.querySelector('.folder-label')?.textContent.trim() === folderName);
