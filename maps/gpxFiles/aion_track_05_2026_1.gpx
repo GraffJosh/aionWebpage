@@ -5389,5 +5389,49 @@
         <time>2026-05-18T17:27:57.601</time>
       </trkpt>
     </trkseg>
+    <trkseg>
+      <trkpt lat="39.2795" lon="-76.5847">
+        <time>2026-05-18T22:00:39.098</time>
+        <desc>{"wind_speed_apparent": 1.4, "wind_angle_true": 63.00002, "speed_over_ground": 0.0, "signal_strength": 100.0}</desc>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <trkseg>
+      <trkpt lat="39.2795" lon="-76.5847">
+        <time>2026-05-22T22:01:56.784</time>
+        <desc>{}</desc>
+      </trkpt>
+      <trkpt lat="39.2796" lon="-76.5847">
+        <time>2026-05-22T22:02:26.917</time>
+        <desc>{"wind_speed_apparent": 3.69999, "wind_angle_true": 50.50002, "speed_over_ground": 0.0, "signal_strength": 96.6}</desc>
+      </trkpt>
+      <trkpt lat="39.2795" lon="-76.5847">
+        <time>2026-05-22T22:02:57.984</time>
+        <desc>{"wind_speed_apparent": 3.99999, "wind_angle_true": 51.50002, "speed_over_ground": 0.0, "signal_strength": 96.6}</desc>
+      </trkpt>
+      <trkpt lat="39.2796" lon="-76.5847">
+        <time>2026-05-22T23:39:23.610</time>
+        <desc>{"wind_speed_apparent": 7.19999, "wind_angle_true": 55.50002, "speed_over_ground": 0.0, "signal_strength": 100.0}</desc>
+      </trkpt>
+      <trkpt lat="39.2795" lon="-76.5847">
+        <time>2026-05-22T23:40:24.103</time>
+        <desc>{"wind_speed_apparent": 4.99999, "wind_angle_true": 11.5, "speed_over_ground": 0.0, "signal_strength": 93.1}</desc>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <trkseg>
+      <trkpt lat="39.2795" lon="-76.5847">
+        <time>2026-05-24T14:34:19.450</time>
+        <desc>{}</desc>
+      </trkpt>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.2796" lon="-76.5847">
+        <time>2026-05-24T17:35:53.805</time>
+        <desc>{}</desc>
+      </trkpt>
+    </trkseg>
   </trk>
 </gpx>
