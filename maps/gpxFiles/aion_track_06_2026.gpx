@@ -5196,6 +5196,838 @@
         <time>2026-06-21T13:43:20.685</time>
         <desc>{"wind_speed_apparent": {"value": 0.0, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-19.00001", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.6, "units": "kts", "type": "speed"}, "signal_strength": {"value": 86.2, "units": "%", "type": "signal"}, "depth": {"value": 6.7, "units": "ft", "type": "distance"}}</desc>
       </trkpt>
+      <trkpt lat="38.5725" lon="-76.0738">
+        <time>2026-06-21T16:43:33.531</time>
+        <desc>{"wind_speed_apparent": {"value": 3.19999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "165.00006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 6.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0737">
+        <time>2026-06-21T17:24:58.453</time>
+        <desc>{"wind_speed_apparent": {"value": 3.19999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "165.00006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 6.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5725" lon="-76.0737">
+        <time>2026-06-21T17:31:01.825</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 86.2, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0737">
+        <time>2026-06-21T17:39:05.653</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 75.9, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5725" lon="-76.0737">
+        <time>2026-06-21T19:04:51.556</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0737">
+        <time>2026-06-21T19:23:31.561</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5725" lon="-76.0738">
+        <time>2026-06-21T19:26:03.461</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0737">
+        <time>2026-06-21T19:26:33.462</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5725" lon="-76.0737">
+        <time>2026-06-21T19:48:36.240</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0736">
+        <time>2026-06-21T19:49:06.616</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0738">
+        <time>2026-06-21T19:49:36.818</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5725" lon="-76.0737">
+        <time>2026-06-21T19:51:07.618</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0737">
+        <time>2026-06-21T19:51:37.824</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5725" lon="-76.0737">
+        <time>2026-06-21T19:52:08.619</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0737">
+        <time>2026-06-21T20:02:14.495</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 86.2, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5725" lon="-76.0738">
+        <time>2026-06-22T00:30:40.459</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0737">
+        <time>2026-06-22T00:39:44.659</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 93.1, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5725" lon="-76.0737">
+        <time>2026-06-22T01:00:26.546</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0737">
+        <time>2026-06-22T01:04:29.544</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5725" lon="-76.0737">
+        <time>2026-06-22T01:24:42.537</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0737">
+        <time>2026-06-22T01:49:26.428</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5725" lon="-76.0737">
+        <time>2026-06-22T02:59:33.360</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 100.0, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0737">
+        <time>2026-06-22T03:16:12.453</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5725" lon="-76.0737">
+        <time>2026-06-22T03:35:51.663</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0737">
+        <time>2026-06-22T04:03:37.473</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 86.2, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5725" lon="-76.0737">
+        <time>2026-06-22T04:17:15.490</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 86.2, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0737">
+        <time>2026-06-22T04:27:51.490</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 86.2, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5725" lon="-76.0737">
+        <time>2026-06-22T04:44:59.608</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0737">
+        <time>2026-06-22T04:47:01.400</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5726" lon="-76.0738">
+        <time>2026-06-22T06:31:00.652</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 93.1, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5725" lon="-76.0738">
+        <time>2026-06-22T06:32:31.656</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 93.1, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0737">
+        <time>2026-06-22T06:50:41.344</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 93.1, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5725" lon="-76.0737">
+        <time>2026-06-22T06:58:14.648</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0737">
+        <time>2026-06-22T07:01:47.469</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 86.2, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5725" lon="-76.0737">
+        <time>2026-06-22T08:05:56.385</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.0, "units": "kts", "type": "speed"}, "signal_strength": {"value": 93.1, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0738">
+        <time>2026-06-22T08:06:26.553</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 1.4, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5722" lon="-76.0739">
+        <time>2026-06-22T08:06:57.347</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 1.99784, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5719" lon="-76.0739">
+        <time>2026-06-22T08:07:27.544</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 1.5, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5719" lon="-76.0737">
+        <time>2026-06-22T08:07:57.584</time>
+        <desc>{"wind_speed_apparent": {"value": 4.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 3.39999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 5.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5724" lon="-76.0737">
+        <time>2026-06-22T08:08:28.170</time>
+        <desc>{"wind_speed_apparent": {"value": 8.19998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": 43.00002, "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 3.49999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 13.0, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.572" lon="-76.0726">
+        <time>2026-06-22T08:08:58.355</time>
+        <desc>{"wind_speed_apparent": {"value": 9.79998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": 66.50002, "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 2.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 12.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5723" lon="-76.0723">
+        <time>2026-06-22T08:09:28.403</time>
+        <desc>{"wind_speed_apparent": {"value": 7.79998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "138.00005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 2.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 12.7, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5727" lon="-76.0721">
+        <time>2026-06-22T08:09:58.457</time>
+        <desc>{"wind_speed_apparent": {"value": 6.99999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "113.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 2.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 12.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.573" lon="-76.0719">
+        <time>2026-06-22T08:10:28.566</time>
+        <desc>{"wind_speed_apparent": {"value": 7.09999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "126.50005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 2.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 13.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5734" lon="-76.0717">
+        <time>2026-06-22T08:10:58.949</time>
+        <desc>{"wind_speed_apparent": {"value": 6.09999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "149.50005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 2.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 12.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5737" lon="-76.0714">
+        <time>2026-06-22T08:11:29.340</time>
+        <desc>{"wind_speed_apparent": {"value": 3.99999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": 51.50002, "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 2.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 13.4, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.574" lon="-76.071">
+        <time>2026-06-22T08:11:59.679</time>
+        <desc>{"wind_speed_apparent": {"value": 5.99999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": 63.00002, "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 3.19999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 14.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5743" lon="-76.0705">
+        <time>2026-06-22T08:12:29.928</time>
+        <desc>{"wind_speed_apparent": {"value": 8.09998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": 76.00003, "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 3.19999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 100.0, "units": "%", "type": "signal"}, "depth": {"value": 17.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5746" lon="-76.07">
+        <time>2026-06-22T08:13:00.757</time>
+        <desc>{"wind_speed_apparent": {"value": 5.09999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": 38.50001, "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 3.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 100.0, "units": "%", "type": "signal"}, "depth": {"value": 17.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5749" lon="-76.0693">
+        <time>2026-06-22T08:13:31.545</time>
+        <desc>{"wind_speed_apparent": {"value": 7.29998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": 73.00003, "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 3.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 100.0, "units": "%", "type": "signal"}, "depth": {"value": 18.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5752" lon="-76.0687">
+        <time>2026-06-22T08:14:01.589</time>
+        <desc>{"wind_speed_apparent": {"value": 7.89998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": 47.00002, "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 100.0, "units": "%", "type": "signal"}, "depth": {"value": 19.4, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5755" lon="-76.0681">
+        <time>2026-06-22T08:14:32.201</time>
+        <desc>{"wind_speed_apparent": {"value": 10.89998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": 61.50002, "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 3.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 100.0, "units": "%", "type": "signal"}, "depth": {"value": 20.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5758" lon="-76.0675">
+        <time>2026-06-22T08:15:02.631</time>
+        <desc>{"wind_speed_apparent": {"value": 10.29998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": 63.00002, "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 3.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 100.0, "units": "%", "type": "signal"}, "depth": {"value": 21.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5761" lon="-76.0669">
+        <time>2026-06-22T08:15:33.407</time>
+        <desc>{"wind_speed_apparent": {"value": 9.19998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": 86.50003, "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 96.6, "units": "%", "type": "signal"}, "depth": {"value": 20.8, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5766" lon="-76.0664">
+        <time>2026-06-22T08:16:03.436</time>
+        <desc>{"wind_speed_apparent": {"value": 10.49998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": 90.00003, "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.29999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 96.6, "units": "%", "type": "signal"}, "depth": {"value": 20.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.577" lon="-76.066">
+        <time>2026-06-22T08:16:33.783</time>
+        <desc>{"wind_speed_apparent": {"value": 8.09998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": 97.00003, "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.29999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 19.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5776" lon="-76.0654">
+        <time>2026-06-22T08:17:04.501</time>
+        <desc>{"wind_speed_apparent": {"value": 8.39998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": 99.50004, "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 19.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5781" lon="-76.0648">
+        <time>2026-06-22T08:17:35.082</time>
+        <desc>{"wind_speed_apparent": {"value": 6.79999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": 87.50003, "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 100.0, "units": "%", "type": "signal"}, "depth": {"value": 19.4, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5787" lon="-76.0643">
+        <time>2026-06-22T08:18:05.693</time>
+        <desc>{"wind_speed_apparent": {"value": 6.49999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "106.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 100.0, "units": "%", "type": "signal"}, "depth": {"value": 19.7, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5793" lon="-76.0638">
+        <time>2026-06-22T08:18:35.726</time>
+        <desc>{"wind_speed_apparent": {"value": 7.29998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": 92.50003, "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 93.1, "units": "%", "type": "signal"}, "depth": {"value": 21.4, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5799" lon="-76.0633">
+        <time>2026-06-22T08:19:06.337</time>
+        <desc>{"wind_speed_apparent": {"value": 7.19999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "114.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 93.1, "units": "%", "type": "signal"}, "depth": {"value": 22.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5805" lon="-76.0628">
+        <time>2026-06-22T08:19:36.779</time>
+        <desc>{"wind_speed_apparent": {"value": 8.79998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "136.00005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.19999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 93.1, "units": "%", "type": "signal"}, "depth": {"value": 28.7, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5812" lon="-76.0626">
+        <time>2026-06-22T08:20:07.336</time>
+        <desc>{"wind_speed_apparent": {"value": 6.89999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "149.00005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 93.1, "units": "%", "type": "signal"}, "depth": {"value": 34.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5819" lon="-76.0626">
+        <time>2026-06-22T08:20:37.668</time>
+        <desc>{"wind_speed_apparent": {"value": 8.09998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "162.50006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 33.7, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5825" lon="-76.0629">
+        <time>2026-06-22T08:21:08.158</time>
+        <desc>{"wind_speed_apparent": {"value": 5.69999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-162.50006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 31.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5832" lon="-76.0633">
+        <time>2026-06-22T08:21:38.475</time>
+        <desc>{"wind_speed_apparent": {"value": 6.09999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-163.00006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 86.2, "units": "%", "type": "signal"}, "depth": {"value": 31.8, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5838" lon="-76.0637">
+        <time>2026-06-22T08:22:08.952</time>
+        <desc>{"wind_speed_apparent": {"value": 9.19998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "178.50006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 86.2, "units": "%", "type": "signal"}, "depth": {"value": 30.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5844" lon="-76.0641">
+        <time>2026-06-22T08:22:39.455</time>
+        <desc>{"wind_speed_apparent": {"value": 6.09999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-165.00006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 86.2, "units": "%", "type": "signal"}, "depth": {"value": 30.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.585" lon="-76.0646">
+        <time>2026-06-22T08:23:10.193</time>
+        <desc>{"wind_speed_apparent": {"value": 8.49998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-164.50006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 86.2, "units": "%", "type": "signal"}, "depth": {"value": 29.7, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5856" lon="-76.0651">
+        <time>2026-06-22T08:23:40.941</time>
+        <desc>{"wind_speed_apparent": {"value": 7.39998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-141.00005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 29.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5862" lon="-76.0656">
+        <time>2026-06-22T08:24:11.611</time>
+        <desc>{"wind_speed_apparent": {"value": 9.39998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-146.50005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 30.0, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5867" lon="-76.0662">
+        <time>2026-06-22T08:24:42.347</time>
+        <desc>{"wind_speed_apparent": {"value": 10.19998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-141.50005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 29.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5872" lon="-76.0668">
+        <time>2026-06-22T08:25:12.508</time>
+        <desc>{"wind_speed_apparent": {"value": 8.09998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-153.00005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 28.7, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5877" lon="-76.0673">
+        <time>2026-06-22T08:25:43.193</time>
+        <desc>{"wind_speed_apparent": {"value": 7.19999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-160.50006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 29.8, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5882" lon="-76.0678">
+        <time>2026-06-22T08:26:13.414</time>
+        <desc>{"wind_speed_apparent": {"value": 7.19999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-179.50006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 28.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5888" lon="-76.0683">
+        <time>2026-06-22T08:26:43.734</time>
+        <desc>{"wind_speed_apparent": {"value": 5.79999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-159.50006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 29.3, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5893" lon="-76.0689">
+        <time>2026-06-22T08:27:14.780</time>
+        <desc>{"wind_speed_apparent": {"value": 8.79998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-168.00006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 29.4, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5899" lon="-76.0695">
+        <time>2026-06-22T08:27:45.369</time>
+        <desc>{"wind_speed_apparent": {"value": 8.59998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-156.00006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 29.8, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5904" lon="-76.07">
+        <time>2026-06-22T08:28:15.559</time>
+        <desc>{"wind_speed_apparent": {"value": 9.39998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-141.50005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 30.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5909" lon="-76.0706">
+        <time>2026-06-22T08:28:45.763</time>
+        <desc>{"wind_speed_apparent": {"value": 6.99999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-157.00006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 93.1, "units": "%", "type": "signal"}, "depth": {"value": 29.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5914" lon="-76.0712">
+        <time>2026-06-22T08:29:16.812</time>
+        <desc>{"wind_speed_apparent": {"value": 8.09998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-134.50005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 93.1, "units": "%", "type": "signal"}, "depth": {"value": 30.5, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5919" lon="-76.0717">
+        <time>2026-06-22T08:29:47.309</time>
+        <desc>{"wind_speed_apparent": {"value": 7.69998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-143.00005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 30.5, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5925" lon="-76.0722">
+        <time>2026-06-22T08:30:17.337</time>
+        <desc>{"wind_speed_apparent": {"value": 7.89998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-177.00006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 31.3, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.593" lon="-76.0728">
+        <time>2026-06-22T08:30:47.373</time>
+        <desc>{"wind_speed_apparent": {"value": 6.79999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-161.50006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.59999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 31.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5935" lon="-76.0733">
+        <time>2026-06-22T08:31:17.765</time>
+        <desc>{"wind_speed_apparent": {"value": 5.79999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-156.50006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 32.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.594" lon="-76.0738">
+        <time>2026-06-22T08:31:47.822</time>
+        <desc>{"wind_speed_apparent": {"value": 7.79998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-154.00006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.59999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 33.4, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5944" lon="-76.0744">
+        <time>2026-06-22T08:32:18.359</time>
+        <desc>{"wind_speed_apparent": {"value": 8.09998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-141.00005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 86.2, "units": "%", "type": "signal"}, "depth": {"value": 32.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5949" lon="-76.075">
+        <time>2026-06-22T08:32:48.778</time>
+        <desc>{"wind_speed_apparent": {"value": 9.99998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-158.00006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 86.2, "units": "%", "type": "signal"}, "depth": {"value": 33.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5954" lon="-76.0756">
+        <time>2026-06-22T08:33:19.311</time>
+        <desc>{"wind_speed_apparent": {"value": 10.09998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-137.00005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 100.0, "units": "%", "type": "signal"}, "depth": {"value": 35.3, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5958" lon="-76.0762">
+        <time>2026-06-22T08:33:49.355</time>
+        <desc>{"wind_speed_apparent": {"value": 8.59998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-146.50005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.49999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 100.0, "units": "%", "type": "signal"}, "depth": {"value": 35.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5963" lon="-76.0768">
+        <time>2026-06-22T08:34:20.146</time>
+        <desc>{"wind_speed_apparent": {"value": 7.49998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-151.50005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.59999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 100.0, "units": "%", "type": "signal"}, "depth": {"value": 37.5, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5967" lon="-76.0774">
+        <time>2026-06-22T08:34:50.612</time>
+        <desc>{"wind_speed_apparent": {"value": 8.39998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-143.50005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.39999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 100.0, "units": "%", "type": "signal"}, "depth": {"value": 38.3, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.597" lon="-76.0781">
+        <time>2026-06-22T08:35:21.588</time>
+        <desc>{"wind_speed_apparent": {"value": 8.79998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-118.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 100.0, "units": "%", "type": "signal"}, "depth": {"value": 39.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5973" lon="-76.0789">
+        <time>2026-06-22T08:35:52.351</time>
+        <desc>{"wind_speed_apparent": {"value": 8.79998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-123.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.49999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 100.0, "units": "%", "type": "signal"}, "depth": {"value": 39.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5976" lon="-76.0796">
+        <time>2026-06-22T08:36:22.972</time>
+        <desc>{"wind_speed_apparent": {"value": 10.59998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-121.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.49999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 100.0, "units": "%", "type": "signal"}, "depth": {"value": 40.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.598" lon="-76.0803">
+        <time>2026-06-22T08:36:53.317</time>
+        <desc>{"wind_speed_apparent": {"value": 10.59998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-125.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.59999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 100.0, "units": "%", "type": "signal"}, "depth": {"value": 40.7, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5983" lon="-76.081">
+        <time>2026-06-22T08:37:23.976</time>
+        <desc>{"wind_speed_apparent": {"value": 10.69998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-119.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 42.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5986" lon="-76.0818">
+        <time>2026-06-22T08:37:54.798</time>
+        <desc>{"wind_speed_apparent": {"value": 8.09998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-122.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 42.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5988" lon="-76.0827">
+        <time>2026-06-22T08:38:25.683</time>
+        <desc>{"wind_speed_apparent": {"value": 9.19998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-129.50005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 93.1, "units": "%", "type": "signal"}, "depth": {"value": 44.4, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5992" lon="-76.0834">
+        <time>2026-06-22T08:38:56.642</time>
+        <desc>{"wind_speed_apparent": {"value": 9.69998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-125.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 93.1, "units": "%", "type": "signal"}, "depth": {"value": 44.3, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5996" lon="-76.0842">
+        <time>2026-06-22T08:39:27.817</time>
+        <desc>{"wind_speed_apparent": {"value": 9.49998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-116.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 93.1, "units": "%", "type": "signal"}, "depth": {"value": 42.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.5999" lon="-76.0849">
+        <time>2026-06-22T08:39:57.993</time>
+        <desc>{"wind_speed_apparent": {"value": 10.39998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-116.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 93.1, "units": "%", "type": "signal"}, "depth": {"value": 42.4, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6003" lon="-76.0857">
+        <time>2026-06-22T08:40:28.497</time>
+        <desc>{"wind_speed_apparent": {"value": 9.89998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-106.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 39.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6005" lon="-76.0866">
+        <time>2026-06-22T08:40:59.495</time>
+        <desc>{"wind_speed_apparent": {"value": 12.59997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-116.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 37.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6006" lon="-76.0874">
+        <time>2026-06-22T08:41:29.756</time>
+        <desc>{"wind_speed_apparent": {"value": 14.79997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-90.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 35.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6007" lon="-76.0883">
+        <time>2026-06-22T08:41:59.849</time>
+        <desc>{"wind_speed_apparent": {"value": 15.39997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-73.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 35.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6005" lon="-76.0891">
+        <time>2026-06-22T08:42:30.371</time>
+        <desc>{"wind_speed_apparent": {"value": 11.09998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-77.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 35.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6004" lon="-76.0899">
+        <time>2026-06-22T08:43:00.660</time>
+        <desc>{"wind_speed_apparent": {"value": 11.39998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-86.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 35.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6003" lon="-76.0908">
+        <time>2026-06-22T08:43:31.303</time>
+        <desc>{"wind_speed_apparent": {"value": 11.79998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-67.50002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 35.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6003" lon="-76.0916">
+        <time>2026-06-22T08:44:01.704</time>
+        <desc>{"wind_speed_apparent": {"value": 14.79997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-75.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 36.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6003" lon="-76.0925">
+        <time>2026-06-22T08:44:31.848</time>
+        <desc>{"wind_speed_apparent": {"value": 11.99998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-95.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 34.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6003" lon="-76.0934">
+        <time>2026-06-22T08:45:03.149</time>
+        <desc>{"wind_speed_apparent": {"value": 12.99997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-84.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 32.3, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6003" lon="-76.0942">
+        <time>2026-06-22T08:45:33.623</time>
+        <desc>{"wind_speed_apparent": {"value": 13.89997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-96.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 32.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6004" lon="-76.0951">
+        <time>2026-06-22T08:46:03.628</time>
+        <desc>{"wind_speed_apparent": {"value": 12.59997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-102.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 89.7, "units": "%", "type": "signal"}, "depth": {"value": 33.8, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6005" lon="-76.096">
+        <time>2026-06-22T08:46:34.455</time>
+        <desc>{"wind_speed_apparent": {"value": 10.59998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-73.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 86.2, "units": "%", "type": "signal"}, "depth": {"value": 33.7, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6005" lon="-76.0968">
+        <time>2026-06-22T08:47:04.747</time>
+        <desc>{"wind_speed_apparent": {"value": 9.59998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-73.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 86.2, "units": "%", "type": "signal"}, "depth": {"value": 28.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6004" lon="-76.0977">
+        <time>2026-06-22T08:47:35.344</time>
+        <desc>{"wind_speed_apparent": {"value": 9.29998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-73.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 75.9, "units": "%", "type": "signal"}, "depth": {"value": 29.0, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6004" lon="-76.0985">
+        <time>2026-06-22T08:48:05.506</time>
+        <desc>{"wind_speed_apparent": {"value": 13.99997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-69.50002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.59999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 75.9, "units": "%", "type": "signal"}, "depth": {"value": 16.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6004" lon="-76.0993">
+        <time>2026-06-22T08:48:35.863</time>
+        <desc>{"wind_speed_apparent": {"value": 11.09998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-97.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.59999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 20.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6003" lon="-76.1002">
+        <time>2026-06-22T08:49:06.293</time>
+        <desc>{"wind_speed_apparent": {"value": 10.49998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-90.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 30.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6003" lon="-76.101">
+        <time>2026-06-22T08:49:36.837</time>
+        <desc>{"wind_speed_apparent": {"value": 9.19998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-90.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 29.3, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6004" lon="-76.1018">
+        <time>2026-06-22T08:50:07.894</time>
+        <desc>{"wind_speed_apparent": {"value": 17.49996, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-81.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.59999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 28.0, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6005" lon="-76.1027">
+        <time>2026-06-22T08:50:38.524</time>
+        <desc>{"wind_speed_apparent": {"value": 12.79997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-91.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.59999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 27.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6006" lon="-76.1035">
+        <time>2026-06-22T08:51:09.681</time>
+        <desc>{"wind_speed_apparent": {"value": 10.79998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-103.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 27.4, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6007" lon="-76.1043">
+        <time>2026-06-22T08:51:40.020</time>
+        <desc>{"wind_speed_apparent": {"value": 11.69998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-86.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 27.8, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6008" lon="-76.1052">
+        <time>2026-06-22T08:52:10.664</time>
+        <desc>{"wind_speed_apparent": {"value": 10.99998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-85.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 27.4, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6009" lon="-76.106">
+        <time>2026-06-22T08:52:41.294</time>
+        <desc>{"wind_speed_apparent": {"value": 8.09998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-93.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 75.9, "units": "%", "type": "signal"}, "depth": {"value": 27.8, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.601" lon="-76.1068">
+        <time>2026-06-22T08:53:11.295</time>
+        <desc>{"wind_speed_apparent": {"value": 10.59998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-80.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.59999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 75.9, "units": "%", "type": "signal"}, "depth": {"value": 28.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6012" lon="-76.1076">
+        <time>2026-06-22T08:53:41.628</time>
+        <desc>{"wind_speed_apparent": {"value": 13.89997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-92.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 29.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6013" lon="-76.1084">
+        <time>2026-06-22T08:54:11.705</time>
+        <desc>{"wind_speed_apparent": {"value": 13.69997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-92.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.59999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 29.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6015" lon="-76.1092">
+        <time>2026-06-22T08:54:41.910</time>
+        <desc>{"wind_speed_apparent": {"value": 13.09997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-107.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 30.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6017" lon="-76.1101">
+        <time>2026-06-22T08:55:12.818</time>
+        <desc>{"wind_speed_apparent": {"value": 12.79997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-97.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 30.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6019" lon="-76.1109">
+        <time>2026-06-22T08:55:43.580</time>
+        <desc>{"wind_speed_apparent": {"value": 14.69997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-94.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 33.3, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.602" lon="-76.1117">
+        <time>2026-06-22T08:56:14.588</time>
+        <desc>{"wind_speed_apparent": {"value": 15.39997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-97.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 34.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6023" lon="-76.1125">
+        <time>2026-06-22T08:56:45.001</time>
+        <desc>{"wind_speed_apparent": {"value": 11.19998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-110.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.59999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 36.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6025" lon="-76.1133">
+        <time>2026-06-22T08:57:15.903</time>
+        <desc>{"wind_speed_apparent": {"value": 11.39998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-102.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 37.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6027" lon="-76.1141">
+        <time>2026-06-22T08:57:46.507</time>
+        <desc>{"wind_speed_apparent": {"value": 10.29998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-101.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 39.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6031" lon="-76.1149">
+        <time>2026-06-22T08:58:16.699</time>
+        <desc>{"wind_speed_apparent": {"value": 11.99998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-108.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 40.4, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6034" lon="-76.1157">
+        <time>2026-06-22T08:58:47.631</time>
+        <desc>{"wind_speed_apparent": {"value": 12.99997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-111.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 72.4, "units": "%", "type": "signal"}, "depth": {"value": 40.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6037" lon="-76.1165">
+        <time>2026-06-22T08:59:18.752</time>
+        <desc>{"wind_speed_apparent": {"value": 12.39997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-111.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 72.4, "units": "%", "type": "signal"}, "depth": {"value": 41.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.604" lon="-76.1173">
+        <time>2026-06-22T08:59:49.347</time>
+        <desc>{"wind_speed_apparent": {"value": 10.79998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-109.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 72.4, "units": "%", "type": "signal"}, "depth": {"value": 41.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6043" lon="-76.118">
+        <time>2026-06-22T09:00:19.416</time>
+        <desc>{"wind_speed_apparent": {"value": 10.89998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-112.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 86.2, "units": "%", "type": "signal"}, "depth": {"value": 41.0, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6046" lon="-76.1188">
+        <time>2026-06-22T09:00:49.927</time>
+        <desc>{"wind_speed_apparent": {"value": 11.19998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-115.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 86.2, "units": "%", "type": "signal"}, "depth": {"value": 40.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6049" lon="-76.1196">
+        <time>2026-06-22T09:01:20.794</time>
+        <desc>{"wind_speed_apparent": {"value": 12.19997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-106.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 75.9, "units": "%", "type": "signal"}, "depth": {"value": 37.0, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6052" lon="-76.1204">
+        <time>2026-06-22T09:01:51.292</time>
+        <desc>{"wind_speed_apparent": {"value": 11.39998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-104.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 75.9, "units": "%", "type": "signal"}, "depth": {"value": 35.3, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6055" lon="-76.1212">
+        <time>2026-06-22T09:02:22.174</time>
+        <desc>{"wind_speed_apparent": {"value": 8.59998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-113.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 75.9, "units": "%", "type": "signal"}, "depth": {"value": 34.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6058" lon="-76.122">
+        <time>2026-06-22T09:02:52.445</time>
+        <desc>{"wind_speed_apparent": {"value": 11.19998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-116.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 75.9, "units": "%", "type": "signal"}, "depth": {"value": 32.4, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6061" lon="-76.1228">
+        <time>2026-06-22T09:03:22.516</time>
+        <desc>{"wind_speed_apparent": {"value": 8.09998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-117.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 32.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6064" lon="-76.1236">
+        <time>2026-06-22T09:03:52.978</time>
+        <desc>{"wind_speed_apparent": {"value": 10.89998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-108.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 32.0, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6067" lon="-76.1244">
+        <time>2026-06-22T09:04:24.142</time>
+        <desc>{"wind_speed_apparent": {"value": 12.79997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-113.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 31.8, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.607" lon="-76.1252">
+        <time>2026-06-22T09:04:54.311</time>
+        <desc>{"wind_speed_apparent": {"value": 11.59998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-112.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 32.0, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6073" lon="-76.126">
+        <time>2026-06-22T09:05:24.317</time>
+        <desc>{"wind_speed_apparent": {"value": 11.59998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-119.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 32.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6076" lon="-76.1268">
+        <time>2026-06-22T09:05:54.794</time>
+        <desc>{"wind_speed_apparent": {"value": 10.09998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-120.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 32.0, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6079" lon="-76.1277">
+        <time>2026-06-22T09:06:25.480</time>
+        <desc>{"wind_speed_apparent": {"value": 11.19998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-102.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 69.0, "units": "%", "type": "signal"}, "depth": {"value": 32.4, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6081" lon="-76.1285">
+        <time>2026-06-22T09:06:55.837</time>
+        <desc>{"wind_speed_apparent": {"value": 8.89998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-119.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 69.0, "units": "%", "type": "signal"}, "depth": {"value": 33.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6083" lon="-76.1294">
+        <time>2026-06-22T09:07:26.296</time>
+        <desc>{"wind_speed_apparent": {"value": 10.49998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-111.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.19999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 72.4, "units": "%", "type": "signal"}, "depth": {"value": 32.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6086" lon="-76.1302">
+        <time>2026-06-22T09:07:56.316</time>
+        <desc>{"wind_speed_apparent": {"value": 9.89998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-101.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 72.4, "units": "%", "type": "signal"}, "depth": {"value": 32.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6088" lon="-76.1311">
+        <time>2026-06-22T09:08:26.592</time>
+        <desc>{"wind_speed_apparent": {"value": 7.79998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-100.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 32.8, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6091" lon="-76.1319">
+        <time>2026-06-22T09:08:56.786</time>
+        <desc>{"wind_speed_apparent": {"value": 7.69998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-103.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 79.3, "units": "%", "type": "signal"}, "depth": {"value": 31.8, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6092" lon="-76.1328">
+        <time>2026-06-22T09:09:27.125</time>
+        <desc>{"wind_speed_apparent": {"value": 10.39998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-77.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 69.0, "units": "%", "type": "signal"}, "depth": {"value": 31.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6093" lon="-76.1337">
+        <time>2026-06-22T09:09:57.335</time>
+        <desc>{"wind_speed_apparent": {"value": 16.09997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-88.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 69.0, "units": "%", "type": "signal"}, "depth": {"value": 31.5, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6094" lon="-76.1346">
+        <time>2026-06-22T09:10:27.367</time>
+        <desc>{"wind_speed_apparent": {"value": 15.39997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-86.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 58.6, "units": "%", "type": "signal"}, "depth": {"value": 30.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6094" lon="-76.1355">
+        <time>2026-06-22T09:10:57.889</time>
+        <desc>{"wind_speed_apparent": {"value": 11.89998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-76.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.19999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 58.6, "units": "%", "type": "signal"}, "depth": {"value": 30.4, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6093" lon="-76.1364">
+        <time>2026-06-22T09:11:28.831</time>
+        <desc>{"wind_speed_apparent": {"value": 10.19998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-82.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 29.7, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6093" lon="-76.1373">
+        <time>2026-06-22T09:11:59.656</time>
+        <desc>{"wind_speed_apparent": {"value": 11.19998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-87.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 82.8, "units": "%", "type": "signal"}, "depth": {"value": 27.7, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6093" lon="-76.1382">
+        <time>2026-06-22T09:12:30.557</time>
+        <desc>{"wind_speed_apparent": {"value": 12.19997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-80.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 62.1, "units": "%", "type": "signal"}, "depth": {"value": 22.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6093" lon="-76.1391">
+        <time>2026-06-22T09:13:01.163</time>
+        <desc>{"wind_speed_apparent": {"value": 14.19997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-89.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 62.1, "units": "%", "type": "signal"}, "depth": {"value": 17.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6092" lon="-76.14">
+        <time>2026-06-22T09:13:31.569</time>
+        <desc>{"wind_speed_apparent": {"value": 15.79997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-81.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 69.0, "units": "%", "type": "signal"}, "depth": {"value": 10.4, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6093" lon="-76.1408">
+        <time>2026-06-22T09:14:01.879</time>
+        <desc>{"wind_speed_apparent": {"value": 6.69999, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-93.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.39999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 69.0, "units": "%", "type": "signal"}, "depth": {"value": 10.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6095" lon="-76.1415">
+        <time>2026-06-22T09:14:32.345</time>
+        <desc>{"wind_speed_apparent": {"value": 10.69998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-93.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.29999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 69.0, "units": "%", "type": "signal"}, "depth": {"value": 11.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6096" lon="-76.1423">
+        <time>2026-06-22T09:15:02.469</time>
+        <desc>{"wind_speed_apparent": {"value": 11.09998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-103.00004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.89999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 69.0, "units": "%", "type": "signal"}, "depth": {"value": 11.4, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6097" lon="-76.1432">
+        <time>2026-06-22T09:15:32.631</time>
+        <desc>{"wind_speed_apparent": {"value": 10.29998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-84.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.29999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 58.6, "units": "%", "type": "signal"}, "depth": {"value": 10.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6096" lon="-76.1442">
+        <time>2026-06-22T09:16:03.542</time>
+        <desc>{"wind_speed_apparent": {"value": 11.89998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-86.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.39999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 58.6, "units": "%", "type": "signal"}, "depth": {"value": 10.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6093" lon="-76.145">
+        <time>2026-06-22T09:16:33.798</time>
+        <desc>{"wind_speed_apparent": {"value": 14.39997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-56.50002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.19999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 51.7, "units": "%", "type": "signal"}, "depth": {"value": 11.3, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6091" lon="-76.1459">
+        <time>2026-06-22T09:17:04.483</time>
+        <desc>{"wind_speed_apparent": {"value": 9.79998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-62.00002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.19999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 51.7, "units": "%", "type": "signal"}, "depth": {"value": 12.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6087" lon="-76.1468">
+        <time>2026-06-22T09:17:34.972</time>
+        <desc>{"wind_speed_apparent": {"value": 11.39998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-76.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.19999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 51.7, "units": "%", "type": "signal"}, "depth": {"value": 10.8, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6084" lon="-76.1476">
+        <time>2026-06-22T09:18:04.989</time>
+        <desc>{"wind_speed_apparent": {"value": 12.49997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-71.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 51.7, "units": "%", "type": "signal"}, "depth": {"value": 10.3, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6081" lon="-76.1484">
+        <time>2026-06-22T09:18:35.560</time>
+        <desc>{"wind_speed_apparent": {"value": 13.99997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-74.50003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 51.7, "units": "%", "type": "signal"}, "depth": {"value": 10.8, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6078" lon="-76.1493">
+        <time>2026-06-22T09:19:05.795</time>
+        <desc>{"wind_speed_apparent": {"value": 14.29997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-60.00002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 51.7, "units": "%", "type": "signal"}, "depth": {"value": 10.3, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6075" lon="-76.1501">
+        <time>2026-06-22T09:19:35.970</time>
+        <desc>{"wind_speed_apparent": {"value": 16.19997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-55.00002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 65.5, "units": "%", "type": "signal"}, "depth": {"value": 10.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6072" lon="-76.1509">
+        <time>2026-06-22T09:20:06.528</time>
+        <desc>{"wind_speed_apparent": {"value": 14.39997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-56.00002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 65.5, "units": "%", "type": "signal"}, "depth": {"value": 11.7, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6068" lon="-76.1517">
+        <time>2026-06-22T09:20:36.635</time>
+        <desc>{"wind_speed_apparent": {"value": 15.79997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-44.50002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 51.7, "units": "%", "type": "signal"}, "depth": {"value": 12.8, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6065" lon="-76.1525">
+        <time>2026-06-22T09:21:06.659</time>
+        <desc>{"wind_speed_apparent": {"value": 14.79997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-64.50002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 51.7, "units": "%", "type": "signal"}, "depth": {"value": 13.0, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6061" lon="-76.1533">
+        <time>2026-06-22T09:21:36.856</time>
+        <desc>{"wind_speed_apparent": {"value": 13.49997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-38.50001", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 51.7, "units": "%", "type": "signal"}, "depth": {"value": 12.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6058" lon="-76.1541">
+        <time>2026-06-22T09:22:07.117</time>
+        <desc>{"wind_speed_apparent": {"value": 15.19997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-53.50002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 51.7, "units": "%", "type": "signal"}, "depth": {"value": 12.0, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6055" lon="-76.1549">
+        <time>2026-06-22T09:22:37.623</time>
+        <desc>{"wind_speed_apparent": {"value": 19.09996, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-53.50002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 51.7, "units": "%", "type": "signal"}, "depth": {"value": 12.3, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6051" lon="-76.1556">
+        <time>2026-06-22T09:23:07.731</time>
+        <desc>{"wind_speed_apparent": {"value": 16.59997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-57.00002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 51.7, "units": "%", "type": "signal"}, "depth": {"value": 11.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6048" lon="-76.1565">
+        <time>2026-06-22T09:23:38.667</time>
+        <desc>{"wind_speed_apparent": {"value": 16.89997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-70.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.19999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 51.7, "units": "%", "type": "signal"}, "depth": {"value": 11.8, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6045" lon="-76.1573">
+        <time>2026-06-22T09:24:08.772</time>
+        <desc>{"wind_speed_apparent": {"value": 16.79997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-69.00002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 51.7, "units": "%", "type": "signal"}, "depth": {"value": 11.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6042" lon="-76.1582">
+        <time>2026-06-22T09:24:39.451</time>
+        <desc>{"wind_speed_apparent": {"value": 12.59997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-57.00002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.19999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 51.7, "units": "%", "type": "signal"}, "depth": {"value": 11.3, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6039" lon="-76.159">
+        <time>2026-06-22T09:25:09.867</time>
+        <desc>{"wind_speed_apparent": {"value": 18.19996, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-75.00003", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.29999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 51.7, "units": "%", "type": "signal"}, "depth": {"value": 10.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6035" lon="-76.1598">
+        <time>2026-06-22T09:25:40.779</time>
+        <desc>{"wind_speed_apparent": {"value": 16.79997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-69.00002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.19999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 62.1, "units": "%", "type": "signal"}, "depth": {"value": 10.4, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6032" lon="-76.1607">
+        <time>2026-06-22T09:26:10.966</time>
+        <desc>{"wind_speed_apparent": {"value": 15.19997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-57.00002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 62.1, "units": "%", "type": "signal"}, "depth": {"value": 10.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6028" lon="-76.1615">
+        <time>2026-06-22T09:26:41.476</time>
+        <desc>{"wind_speed_apparent": {"value": 12.19997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-45.50002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 5.19999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 58.6, "units": "%", "type": "signal"}, "depth": {"value": 9.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6024" lon="-76.1622">
+        <time>2026-06-22T09:27:11.902</time>
+        <desc>{"wind_speed_apparent": {"value": 13.49997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-45.00002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 4.99999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 58.6, "units": "%", "type": "signal"}, "depth": {"value": 9.3, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6021" lon="-76.1629">
+        <time>2026-06-22T09:27:42.332</time>
+        <desc>{"wind_speed_apparent": {"value": 17.49996, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-46.00002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 3.79999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 58.6, "units": "%", "type": "signal"}, "depth": {"value": 9.1, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6019" lon="-76.1634">
+        <time>2026-06-22T09:28:12.508</time>
+        <desc>{"wind_speed_apparent": {"value": 13.49997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-43.00002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 3.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 58.6, "units": "%", "type": "signal"}, "depth": {"value": 9.0, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6017" lon="-76.1639">
+        <time>2026-06-22T09:28:42.952</time>
+        <desc>{"wind_speed_apparent": {"value": 11.59998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-57.50002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 3.09999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 58.6, "units": "%", "type": "signal"}, "depth": {"value": 9.0, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6013" lon="-76.1642">
+        <time>2026-06-22T09:29:13.440</time>
+        <desc>{"wind_speed_apparent": {"value": 12.19997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-33.00001", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 2.69999, "units": "kts", "type": "speed"}, "signal_strength": {"value": 58.6, "units": "%", "type": "signal"}, "depth": {"value": 9.0, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.601" lon="-76.1644">
+        <time>2026-06-22T09:29:43.900</time>
+        <desc>{"wind_speed_apparent": {"value": 14.89997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-36.50001", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 2.4, "units": "kts", "type": "speed"}, "signal_strength": {"value": 65.5, "units": "%", "type": "signal"}, "depth": {"value": 8.6, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6008" lon="-76.1646">
+        <time>2026-06-22T09:30:14.586</time>
+        <desc>{"wind_speed_apparent": {"value": 11.89998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-45.50002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 2.1, "units": "kts", "type": "speed"}, "signal_strength": {"value": 65.5, "units": "%", "type": "signal"}, "depth": {"value": 7.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6007" lon="-76.1646">
+        <time>2026-06-22T09:30:45.382</time>
+        <desc>{"wind_speed_apparent": {"value": 15.19997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-128.50005", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 1.1, "units": "kts", "type": "speed"}, "signal_strength": {"value": 55.2, "units": "%", "type": "signal"}, "depth": {"value": 6.4, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6007" lon="-76.1644">
+        <time>2026-06-22T09:31:15.435</time>
+        <desc>{"wind_speed_apparent": {"value": 18.69996, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "179.50006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.5, "units": "kts", "type": "speed"}, "signal_strength": {"value": 55.2, "units": "%", "type": "signal"}, "depth": {"value": 8.5, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6007" lon="-76.1646">
+        <time>2026-06-22T09:32:16.033</time>
+        <desc>{"wind_speed_apparent": {"value": 12.89997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "180.00006", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.9, "units": "kts", "type": "speed"}, "signal_strength": {"value": 55.2, "units": "%", "type": "signal"}, "depth": {"value": 7.8, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.6009" lon="-76.1646">
+        <time>2026-06-22T09:32:46.311</time>
+        <desc>{"wind_speed_apparent": {"value": 11.99998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-100.50004", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.8, "units": "kts", "type": "speed"}, "signal_strength": {"value": 69.0, "units": "%", "type": "signal"}, "depth": {"value": 6.9, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.601" lon="-76.1648">
+        <time>2026-06-22T09:33:48.193</time>
+        <desc>{"wind_speed_apparent": {"value": 8.99998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": 9.5, "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.7, "units": "kts", "type": "speed"}, "signal_strength": {"value": 65.5, "units": "%", "type": "signal"}, "depth": {"value": 6.7, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.601" lon="-76.1646">
+        <time>2026-06-22T09:40:23.662</time>
+        <desc>{"wind_speed_apparent": {"value": 13.89997, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-64.50002", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.1, "units": "kts", "type": "speed"}, "signal_strength": {"value": 62.1, "units": "%", "type": "signal"}, "depth": {"value": 7.5, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
+      <trkpt lat="38.601" lon="-76.1648">
+        <time>2026-06-22T09:41:24.737</time>
+        <desc>{"wind_speed_apparent": {"value": 9.49998, "units": "kts", "type": "speed"}, "wind_angle_true": {"value": "-36.50001", "units": "deg", "type": "angle"}, "speed_over_ground": {"value": 0.4, "units": "kts", "type": "speed"}, "signal_strength": {"value": 51.7, "units": "%", "type": "signal"}, "depth": {"value": 6.2, "units": "ft", "type": "distance"}}</desc>
+      </trkpt>
     </trkseg>
   </trk>
 </gpx>
